@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC002 _VerifyClickMe</name>
+   <name>TC003_VerifyAccordian</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>21956902-0714-474c-a048-44d0db94c051</testCaseGuid>
+   <testCaseGuid>11387186-e696-4786-9bf1-b82f540abf52</testCaseGuid>
 </TestCaseEntity>
