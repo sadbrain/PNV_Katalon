@@ -22,19 +22,19 @@ WebUI.openBrowser(GlobalVariable.URL_CONTACT)
 
 'Step 1:'
 'Enter text to first name field'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_FirstName'), 'Nhung')
+WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_FirstName'), 'FName')
 
 'Step 2:'
 'Enter text to last name field'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_LastName'), 'Phan')
+WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_LastName'), 'LName')
 
 'Step 3:'
 'Enter text to email field'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_email'), 'nhung@gmail.com')
+WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_email'), 'test@gmail.com')
 
 'Step 4:'
 'Enter text to comment field'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txa_Comment'), 'Have a good nice!')
+WebUI.setText(findTestObject('Object Repository/Contact_Page/txa_Comment'), 'This is a comment')
 
 'Step 5:'
 'Click the "Submit" button'
