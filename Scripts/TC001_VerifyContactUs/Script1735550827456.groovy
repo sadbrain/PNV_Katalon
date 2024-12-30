@@ -16,14 +16,31 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
+'Open the browser and navigate to the URL'
 WebUI.openBrowser('')
 WebUI.navigateToMaskedUrl(GlobalVariable.URL_CONTACT)
-WebUI.setText( findTestObject('Object Repository/ContactUs_Page/txt_FirstName'), 'Lam')
-WebUI.setText( findTestObject('Object Repository/ContactUs_Page/txt_LastName'), 'Dương')
-WebUI.setText( findTestObject('Object Repository/ContactUs_Page/txt_Email'), 'honglam@gmail.com')
-WebUI.setText( findTestObject('Object Repository/ContactUs_Page/txa_Comment'), 'good')
+
+'Step 1:'
+'Enter first name into the "FName" text box'
+WebUI.setText( findTestObject('Object Repository/ContactUs_Page/txt_FirstName'), 'FName')
+
+'Step 2:'
+'Enter last name into the "LName" text box'
+WebUI.setText( findTestObject('Object Repository/ContactUs_Page/txt_LastName'), 'LName')
+
+'Step 3:'
+'Enter email into the "Email" text box'
+WebUI.setText( findTestObject('Object Repository/ContactUs_Page/txt_Email'), 'test@gmail.com')
+
+'Step 4:'
+'Enter comment into the "Comment" text box'
+WebUI.setText( findTestObject('Object Repository/ContactUs_Page/txa_Comment'), 'This is a comment')
+
+'Step 5:'
+'Click the "Submit" button'
 WebUI.click( findTestObject('Object Repository/ContactUs_Page/btn_Submit'))
-// Verify "Thank you for your message!" is displyed after send contact
+
+'Step 6:'
+'Verify The message "Thank You for your Message!" should be displayed.'
 WebUI.verifyTextPresent("Thank You for your Message!", false)
 WebUI.closeBrowser()
