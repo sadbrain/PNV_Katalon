@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>API-02 - Adds a new profile</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>fd9b83e6-b951-42b8-bb5e-76b470c9808d</testCaseGuid>
+</TestCaseEntity>
