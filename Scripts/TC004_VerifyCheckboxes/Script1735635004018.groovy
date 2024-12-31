@@ -18,16 +18,23 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_WebElement'))
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_CloseWebElement'))
+WebUI.click(findTestObject('Object Repository/Page_Checkboxes/lik_Checkboxes'))
+WebUI.verifyTextPresent('Checkboxes', false)
 
-WebUI.click(findTestObject('Object Repository/Pag	e_ClickMe/btn_JavaScript'))
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_CloseJs'))
+// Step 4: Đánh dấu checkbox 1
+TestObject checkbox1 = findTestObject('Object Repository/Page_Checkboxes/chk_checkbox1')
+if (!WebUI.verifyElementChecked(checkbox1, 1, FailureHandling.OPTIONAL)) {
+	WebUI.check(checkbox1)
+}
 
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_ActionMoveAndClick'))
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_CloseMoveAndClick'))
+// Step 5: Bỏ đánh dấu checkbox 2
+TestObject checkbox2 = findTestObject('Object Repository/Page_Checkboxes/chk_checkbox2')
+if (WebUI.verifyElementChecked(checkbox2, 1, FailureHandling.OPTIONAL)) {
+	WebUI.uncheck(checkbox2)
+}
+
+// Step 6: Kiểm tra trạng thái checkbox
+WebUI.verifyElementChecked(checkbox1, 1)
+WebUI.verifyElementNotChecked(checkbox2, 1)

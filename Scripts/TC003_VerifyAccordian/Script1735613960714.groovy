@@ -18,16 +18,37 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+WebUI.navigateToUrl('http://webdriveruniversity.com/Accordion/index.html')
 
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_WebElement'))
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_CloseWebElement'))
 
-WebUI.click(findTestObject('Object Repository/Pag	e_ClickMe/btn_JavaScript'))
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_CloseJs'))
+TestObject loadingStatus = findTestObject('Object Repository/Page_ Accordian/txt_LoadingStatus')
+int timeout = 10
+int elapsedTime = 0
+boolean isTextMatched = false
 
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_ActionMoveAndClick'))
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.click(findTestObject('Object Repository/Page_ClickMe/btn_CloseMoveAndClick'))
+while (elapsedTime < timeout) {
+    String actualText = WebUI.getText(loadingStatus)
+    if (actualText == 'LOADING COMPLETE.') {
+        isTextMatched = true
+        break
+    }
+    WebUI.delay(1)
+    elapsedTime++
+}
+
+if (!isTextMatched) {
+    WebUI.comment('Failed: Text did not update to "LOADING COMPLETE." within the timeout period.')
+    WebUI.closeBrowser()
+    assert false
+}
+
+
+TestObject accordionItem = findTestObject('Object Repository/Page_ Accordian/btn_KeepClicking')
+WebUI.click(accordionItem)
+
+TestObject textAfter5Seconds = findTestObject('Object Repository/Page_ Accordian/Txt_AfterClick')
+WebUI.waitForElementVisible(textAfter5Seconds, 10)
+String actualMessage = WebUI.getText(textAfter5Seconds)
+WebUI.verifyEqual(actualMessage, 'This text has appeared after 5 seconds!')
+
+WebUI.closeBrowser()
