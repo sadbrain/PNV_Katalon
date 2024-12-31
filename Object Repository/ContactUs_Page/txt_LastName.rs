@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_Submit</name>
+   <name>txt_LastName</name>
    <tag></tag>
-   <elementGuidId>d8c22fa8-742c-4c89-80a4-1724effa75c7</elementGuidId>
+   <elementGuidId>65ddb27f-7de2-482f-a410-72bc86673a6c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@value='SUBMIT']</value>
+         <value>//input[@placeholder='Last Name']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

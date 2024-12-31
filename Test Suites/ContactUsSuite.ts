@@ -12,7 +12,7 @@
    <rerunImmediately>true</rerunImmediately>
    <testSuiteGuid>4a1b5da7-cf02-431c-9558-c6235593abeb</testSuiteGuid>
    <testCaseLink>
-      <guid>3ccd7022-5884-41d4-bca3-f6313fa9b5de</guid>
+      <guid>00a2486d-e270-40ee-a0d1-c6e2909772d2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/TC001_VerifyContactUs</testCaseId>

@@ -19,10 +19,10 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://webdriveruniversity.com/Contact-Us/contactus.html')
-WebUI.setText(findTestObject('Object Repository/txt_FirstName'),'FName')
-WebUI.setText(findTestObject('Object Repository/txt_LastName'),'LName')
-WebUI.setText(findTestObject('Object Repository/txt_EmailAddress'),'test@gmail.com')
-WebUI.setText(findTestObject('Object Repository/txt_Comment'),'This is a comment')
-WebUI.click(findTestObject('Object Repository/btn_Submit'))
+WebUI.setText(findTestObject('Object Repository/ContactUs_Page/txt_FirstName'),'FName')
+WebUI.setText(findTestObject('Object Repository/ContactUs_Page/txt_LastName'),'LName')
+WebUI.setText(findTestObject('Object Repository/ContactUs_Page/txt_EmailAddress'),'test@gmail.com')
+WebUI.setText(findTestObject('Object Repository/ContactUs_Page/txt_Comment'),'This is a comment')
+WebUI.click(findTestObject('Object Repository/ContactUs_Page/btn_Submit'))
 
 WebUI.verifyTextPresent('Thank You for your Message!', false)
