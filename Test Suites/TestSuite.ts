@@ -15,7 +15,7 @@
       <guid>12e71eb9-b169-48f2-aa4a-050ff0d04866</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TC001 - VerifyContactUs</testCaseId>
+      <testCaseId>Test Cases/TC001_VerifyContactUs</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>
