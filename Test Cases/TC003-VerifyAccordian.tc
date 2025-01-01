@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC003-VerifyAccordian</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>41e10635-25e1-43d6-ae06-4beacfcdbb6b</testCaseGuid>
+</TestCaseEntity>
