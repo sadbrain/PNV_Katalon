@@ -17,30 +17,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Accordion/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 
-retries = 15
-textChanged = false
+WebUI.click(findTestObject('Object Repository/Verify_Checkboxes/lb_Checkboxes'))
 
-for (int i = 0; i < retries; i++) {
-	String currentText = WebUI.getText(findTestObject('Object Repository/Verify_Accordian/p_HiddenText'))
-	if (currentText.contains('LOADING COMPLETE')) {
-		textChanged = true
-		break
-	}
-	WebUI.delay(2)
-}
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_Checkboxes/lbl_CheckboxesHeader'), 'Checkboxes')
 
-if (!textChanged) {
-	WebUI.comment('Text did not change to "LOADING COMPLETE"')
-	assert false
-}
+WebUI.check(findTestObject('Object Repository/Verify_Checkboxes/chk_checkbox1'))
 
-WebUI.click(findTestObject('Object Repository/Verify_Accordian/btn_KeepClicking'))
+WebUI.uncheck(findTestObject('Object Repository/Verify_Checkboxes/chk_checkbox2'))
 
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Accordian/txt_TextAfterClick'), 'This text has appeared after 5 seconds!')
+WebUI.verifyElementChecked(findTestObject('Object Repository/Verify_Checkboxes/chk_checkbox1'), 10)
 
+WebUI.verifyElementNotChecked(findTestObject('Object Repository/Verify_Checkboxes/chk_checkbox2'), 10)
 WebUI.closeBrowser()
