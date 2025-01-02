@@ -17,31 +17,20 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Accordion/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
+WebUI.click(findTestObject('Page_Home/lnk_DragAndDrop'))
 
+WebUI.verifyElementText(findTestObject('Page_DragAndDrop/header_Title'), 'Drag and Drop')
 
-retries = 15
-textChanged = false
+WebElement columnA = WebUI.findWebElement(findTestObject('Page_DragAndDrop/column_A'))
+WebElement columnB = WebUI.findWebElement(findTestObject('Page_DragAndDrop/column_B'))
+Actions actions = new Actions(DriverFactory.getWebDriver())
+actions.dragAndDrop(columnA, columnB).perform()
 
-for (int i = 0; i < retries; i++) {
-	String currentText = WebUI.getText(findTestObject('Object Repository/Verify_Accordian/p_HiddenText'))
-	if (currentText.contains('LOADING COMPLETE')) {
-		textChanged = true
-		break
-	}
-	WebUI.delay(2)
-}
-
-if (!textChanged) {
-	WebUI.comment('Text did not change to "LOADING COMPLETE"')
-	assert false
-}
-
-WebUI.click(findTestObject('Object Repository/Verify_Accordian/btn_KeepClicking'))
-
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Accordian/txt_TextAfterClick'), 'This text has appeared after 5 seconds!')
+String columnAText = WebUI.getText(findTestObject('Page_DragAndDrop/column_A'))
+String columnBText = WebUI.getText(findTestObject('Page_DragAndDrop/column_B'))
+assert columnAText == 'B'
+assert columnBText == 'A'
 
 WebUI.closeBrowser()
