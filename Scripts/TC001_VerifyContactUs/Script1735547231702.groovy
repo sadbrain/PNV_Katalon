@@ -17,40 +17,41 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-// Test Case: TC001 - Verify Contact Us
+'Pre-condition steps: '
 
-// Pre-condition steps:
 'Open the browser and navigate to the URL'
 WebUI.openBrowser(GlobalVariable.URL_CONTACT)
 
 'Step 1:'
+
 'Enter first name into the "FName" text box'
 WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_FirstName'), 'FName')
-'ER: The first name should be entered into the "FName" text box.'
 
 'Step 2:'
+
 'Enter last name into the "LName" text box'
 WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_LastName'), 'LName')
-'ER: The last name should be entered into the "LName" text box.'
 
 'Step 3:'
+
 'Enter email into the "Email" text box'
 WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_email'), 'test@gmail.com')
-'ER: The email should be entered into the "Email" text box.'
 
 'Step 4:'
+
 'Enter comment into the "Comment" text box'
 WebUI.setText(findTestObject('Object Repository/Contact_Page/txa_Comment'), 'This is a comment')
-'ER: The comment should be entered into the "Comment" text box.'
 
 'Step 5:'
+
 'Click the "Submit" button'
 WebUI.click(findTestObject('Object Repository/Contact_Page/btn_Submit'))
 
 'Step 6:'
+
 'Verify The message "Thank You for your Message!" should be displayed.'
 WebUI.verifyTextPresent('Thank You for your Message!', false)
-'ER: The message "Thank You for your Message!" should be displayed.'
 
 'Clean-up steps:'
 WebUI.closeBrowser()
+
