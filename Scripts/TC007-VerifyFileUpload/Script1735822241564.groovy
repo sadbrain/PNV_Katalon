@@ -16,30 +16,25 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.Select
+
 
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 
-WebUI.click(findTestObject('Object Repository/Verify_Dropdown/lb_Dropdown'))
+WebUI.navigateToUrl(GlobalVariable.URL)
 
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Dropdown/lbl_DropdownHeader'), 'Dropdown List')
 
-WebElement dropdown = WebUI.findWebElement(findTestObject('Object Repository/Verify_Dropdown/ddl_Dropdown'))
+WebUI.click(findTestObject('Object Repository/Verify_FileUpload/lb_FileUpload'))
 
-Select select = new Select(dropdown)
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_FileUpload/lbl_FileUploaderHeader'), 'File Uploader')
 
-select.selectByVisibleText('Option 2')
+String filePath = "C:\\Users\\DELL\\Pictures\\Screenshots\\map.png";
 
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
-select.selectByIndex(1)
+WebUI.uploadFile(findTestObject('Object Repository/Verify_FileUpload/btn_ChooseFile'), filePath)
 
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 1', false)
-select.selectByValue('2')
+WebUI.click(findTestObject('Object Repository/Verify_FileUpload/btn_Upload'))
 
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_FileUpload/lbl_UploadedFileName'), 'map.png')
 
 WebUI.closeBrowser()
