@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_1</name>
+   <name>mnu_CSV</name>
    <tag></tag>
-   <elementGuidId>5c79a546-e4e4-411a-a612-9cf0a8b5486a</elementGuidId>
+   <elementGuidId>27334f45-5a4e-45e3-afa9-e3aaef29bcc9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,8 +11,11 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='87662f60-ab3f-013d-1d77-26a532bfca5d']&#xd;
-</value>
+         <value>//a[normalize-space()='CSV']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
