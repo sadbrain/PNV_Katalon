@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC005_VerifyDragandDrop</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>14ae5ee7-2aaa-46c5-9d6f-c68f7d13b77b</testCaseGuid>
+</TestCaseEntity>
