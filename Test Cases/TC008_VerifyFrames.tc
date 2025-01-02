@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC008_VerifyFrames</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c43802fd-4ac8-49ec-a1f9-8ad2cbcd1426</testCaseGuid>
+</TestCaseEntity>
