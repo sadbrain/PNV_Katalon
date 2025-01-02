@@ -16,22 +16,35 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.interactions.Actions
+import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.testobject.TestObject
+//import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 
-WebUI.click(findTestObject('Object Repository/Page_Checkboxes/lik_Checkboxes'))
-WebUI.verifyTextPresent('Checkboxes', false)
+// 2. Nhấn vào liên kết 'Drag and Drop'
+WebUI.click(findTestObject('Object Repository/Page_DragAndDrop/lik_DragAndDrop'))
 
-TestObject checkbox1 = findTestObject('Object Repository/Page_Checkboxes/chk_checkbox1')
-if (!WebUI.verifyElementChecked(checkbox1, 1, FailureHandling.OPTIONAL)) {
-	WebUI.check(checkbox1)
-}
+// 3. Kiểm tra tiêu đề của trang
+WebUI.verifyTextPresent('Drag and Drop', false)
 
-TestObject checkbox2 = findTestObject('Object Repository/Page_Checkboxes/chk_checkbox2')
-if (WebUI.verifyElementChecked(checkbox2, 1, FailureHandling.OPTIONAL)) {
-	WebUI.uncheck(checkbox2)
-}
+// 4. Kéo và thả cột A vào vị trí của cột B
+WebElement columnA = WebUI.findWebElement(findTestObject('Object Repository/Page_DragAndDrop/col_ColumnA'))
+WebElement columnB = WebUI.findWebElement(findTestObject('Object Repository/Page_DragAndDrop/col_ColumnB'))
 
-WebUI.verifyElementChecked(checkbox1, 1)
-WebUI.verifyElementNotChecked(checkbox2, 1)
+WebDriver driver = DriverFactory.getWebDriver()
+Actions actions = new Actions(driver)
+
+// Thực hiện kéo và thả
+actions.dragAndDrop(columnA, columnB).perform()
+
+// 5. Xác minh kết quả sau khi kéo thả
+WebUI.verifyElementText(findTestObject('Object Repository/Page_DragAndDrop/col_ColumnA'), 'B')
+WebUI.verifyElementText(findTestObject('Object Repository/Page_DragAndDrop/col_ColumnB'), 'A')
+
+// 6. Đóng trình duyệt
+WebUI.closeBrowser()
