@@ -19,4 +19,9 @@
       <initValue>'http://webdriveruniversity.com/Accordion/index.html'</initValue>
       <name>URL_ACCORDIAN</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://the-internet.herokuapp.com/'</initValue>
+      <name>URL_HEROKU</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
