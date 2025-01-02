@@ -16,26 +16,20 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import com.kms.katalon.core.webui.driver.DriverFactory
-import org.openqa.selenium.interactions.Actions
-import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.support.ui.Select
 
 
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
-WebUI.click(findTestObject('Object Repository/Verify_DragAndDrop/lb_DragAndDrop'))
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_DragAndDrop/lbl_HeaderTitle'), 'Drag and Drop')
-
-WebDriver driver = DriverFactory.getWebDriver()
-
-TestObject columnA = findTestObject('Object Repository/Verify_DragAndDrop/dragAndDrop_columnA')
-TestObject columnB = findTestObject('Object Repository/Verify_DragAndDrop/dragAndDrop_ColumnB')
-
-Actions actions = new Actions(driver)
-actions.dragAndDrop(WebUI.findWebElement(columnA), WebUI.findWebElement(columnB)).perform()
-
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_DragAndDrop/dragAndDrop_columnA'), 'B')
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_DragAndDrop/dragAndDrop_ColumnB'), 'A')
-
+WebUI.click(findTestObject('Object Repository/Verify_Dropdown/lb_Dropdown'))
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_Dropdown/lbl_DropdownHeader'), 'Dropdown List')
+WebElement dropdown = WebUI.findWebElement(findTestObject('Object Repository/Verify_Dropdown/ddl_Dropdown'))
+Select select = new Select(dropdown)
+select.selectByVisibleText('Option 2')
+WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
+select.selectByIndex(1)
+WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 1', false)
+select.selectByValue('2')
+WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
 WebUI.closeBrowser()
-
