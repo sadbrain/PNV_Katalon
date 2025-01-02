@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>API-01-Login</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>a8ff7eb2-6e75-44cb-bf59-cffee88e8773</testCaseGuid>
-</TestCaseEntity>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>TC001 - Verify Contact Us</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>a88b4733-6dde-4ee6-aa6f-670c9a633744</testCaseGuid>
-</TestCaseEntity>
