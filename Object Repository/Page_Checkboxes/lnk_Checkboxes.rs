@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lik_Checkboxes</name>
+   <name>lnk_Checkboxes</name>
    <tag></tag>
    <elementGuidId>08811d45-c39f-4644-a88b-441c2a9ecb89</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//a[normalize-space()='Checkboxes']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//a[normalize-space()='Checkboxes']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -20,7 +20,7 @@ import org.openqa.selenium.Keys as Keys
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 
-WebUI.click(findTestObject('Object Repository/Page_Checkboxes/lik_Checkboxes'))
+WebUI.click(findTestObject('Object Repository/Page_Checkboxes/lnk_Checkboxes'))
 WebUI.verifyTextPresent('Checkboxes', false)
 
 TestObject checkbox1 = findTestObject('Object Repository/Page_Checkboxes/chk_checkbox1')

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lik_DragAndDrop</name>
+   <name>ddl_DropdownList</name>
    <tag></tag>
-   <elementGuidId>61861de8-05d9-4a78-9c5a-29c32076a51b</elementGuidId>
+   <elementGuidId>ec386b3c-0e0f-4415-98ee-34917c19ad7f</elementGuidId>
    <selectorCollection>
-      <entry>
-         <key>XPATH</key>
-         <value>//a[normalize-space()='Drag and Drop']</value>
-      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@id='dropdown']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

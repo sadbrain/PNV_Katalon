@@ -17,27 +17,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.interactions.Actions
-import com.kms.katalon.core.webui.driver.DriverFactory
-import com.kms.katalon.core.testobject.TestObject
+import org.openqa.selenium.support.ui.Select
 
+// 1. Mở trình duyệt và truy cập URL
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
-
-WebUI.click(findTestObject('Object Repository/Page_DragAndDrop/lnk_DragAndDrop'))
-
-WebUI.verifyTextPresent('Drag and Drop', false)
-
-WebElement columnA = WebUI.findWebElement(findTestObject('Object Repository/Page_DragAndDrop/col_ColumnA'))
-WebElement columnB = WebUI.findWebElement(findTestObject('Object Repository/Page_DragAndDrop/col_ColumnB'))
-
-WebDriver driver = DriverFactory.getWebDriver()
-Actions actions = new Actions(driver)
-
-actions.dragAndDrop(columnA, columnB).perform()
-
-WebUI.verifyElementText(findTestObject('Object Repository/Page_DragAndDrop/col_ColumnA'), 'B')
-WebUI.verifyElementText(findTestObject('Object Repository/Page_DragAndDrop/col_ColumnB'), 'A')
-
+WebUI.click(findTestObject('Object Repository/Page_Dropdown/Lnk_Dropdown'))
+WebUI.verifyElementText(findTestObject('Object Repository/Page_Dropdown/hdr_Dropdown List'), 'Dropdown List')
+WebElement dropdown = WebUI.findWebElement(findTestObject('Object Repository/Page_Dropdown/ddl_DropdownList'))
+Select select = new Select(dropdown)
+select.selectByVisibleText('Option 2')
+WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
+select.selectByIndex(1)
+WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 1', false)
+select.selectByValue('2')
+WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
 WebUI.closeBrowser()
