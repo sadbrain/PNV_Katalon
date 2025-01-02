@@ -67,7 +67,7 @@ WebUI.click(findTestObject('Object Repository/Javascript_Alerts_Page/btn_JavaScr
 WebUI.waitForAlert(10) 
 
 'Step 12: '
-'Set text "Hello" in the JS Prompt and click OK'
+'Enter text "Hello" in the JS Prompt and click OK'
 WebUI.setAlertText("Hello")
 WebUI.acceptAlert()
 
