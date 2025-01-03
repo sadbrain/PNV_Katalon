@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Content</name>
+   <name>lnk_KeyPress</name>
    <tag></tag>
-   <elementGuidId>cb147db7-0379-4626-98e9-3bf7c6dc026e</elementGuidId>
+   <elementGuidId>10bbd486-bd3f-4a16-9db3-b57790cd2a7f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//body[@id = 'tinymce']/p</value>
+         <value>//a[normalize-space()='Key Presses']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

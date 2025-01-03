@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Content</name>
+   <name>h3_HeaderTitle</name>
    <tag></tag>
-   <elementGuidId>cb147db7-0379-4626-98e9-3bf7c6dc026e</elementGuidId>
+   <elementGuidId>c92af2f9-35fd-48d1-ab28-92324d0db1fa</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//body[@id = 'tinymce']/p</value>
+         <value>//h3[normalize-space()='Key Presses']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Content</name>
+   <name>txt_Target</name>
    <tag></tag>
-   <elementGuidId>cb147db7-0379-4626-98e9-3bf7c6dc026e</elementGuidId>
+   <elementGuidId>e4cc3a9f-39b6-46f2-9571-1b18cf88b9dd</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//body[@id = 'tinymce']/p</value>
+         <value>//input[@id='target']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
