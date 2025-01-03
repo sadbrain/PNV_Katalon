@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//label[normalize-space()='Password']</value>
+         <value>//p[normalize-space()='Password : admin123']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

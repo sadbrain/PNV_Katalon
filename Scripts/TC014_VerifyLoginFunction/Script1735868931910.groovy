@@ -20,53 +20,45 @@ import org.openqa.selenium.Keys as Keys
 'Step 1: Open the browser and navigate to the login page'
 WebUI.openBrowser(GlobalVariable.URL_ORANGE_DEMO)
 
-'Step 2: Get username text from the Login form'
-String usernameText = WebUI.getText(findTestObject('Object Repository/Login_Page/lbl_Username'))
+'Step 2 : Get username text from Login form to enter into Username textbox'
+String userName = WebUI.getText(findTestObject('Object Repository/Login_Page/lbl_UserName'))
+String userNameSplit = userName.split(":")[1].trim()
+WebUI.verifyEqual(userNameSplit, "Admin")
+WebUI.setText(findTestObject('Object Repository/Login_Page/txt_UserName'),userNameSplit )
 
-'Step 4: Enter username into the textbox'
-WebUI.setText(findTestObject('Object Repository/Login_Page/txt_Username'), GlobalVariable.USER_NAME)
+'Step 3 : Get password text from Login form to enter into Password textbox'
+String password = WebUI.getText(findTestObject('Object Repository/Login_Page/lbl_Password'))
+String passwordSplit = password.split(":")[1].trim()
+WebUI.verifyEqual(passwordSplit, "admin123")
+WebUI.setText( findTestObject('Object Repository/Login_Page/txt_Password'), passwordSplit)
 
-'Step 5: Verify the username is entered successfully'
-String enteredUsername = WebUI.getAttribute(findTestObject('Object Repository/Login_Page/txt_Username'), 'value')
-WebUI.verifyMatch(enteredUsername, GlobalVariable.USER_NAME, false)
-
-'Step 6: Get password text from the Login form'
-String passwordText = WebUI.getText(findTestObject('Object Repository/Login_Page/lbl_Password'))
-
-'Step 7: Enter the password into the textbox'
-WebUI.setText(findTestObject('Object Repository/Login_Page/txt_Password'),  GlobalVariable.PASSWORD)
-
-'Step 8: Verify the password is entered successfully'
-String enteredPassword = WebUI.getAttribute(findTestObject('Object Repository/Login_Page/txt_Password'), 'value')
-WebUI.verifyMatch(enteredPassword, GlobalVariable.PASSWORD, false)
-
-'Step 9: '
+'Step 4: '
 'Click on the "Login" button in the login form'
 WebUI.click(findTestObject('Object Repository/Login_Page/btn_Login'))
 
-'Step 10: Wait for the Dashboard page to load'
+'Step 5: Wait for the Dashboard page to load'
 WebUI.waitForPageLoad(10)
 
-'Step 11: '
+'Step 6: '
 'Verify the Dashboard page title'
 String expectedTitle = "Dashboard" 
 String dashboardText = WebUI.getText(findTestObject('Object Repository/Login_Page/p_DashboardTitle'))
 WebUI.verifyMatch(dashboardText, expectedTitle, false)
 
-'Step 12: '
+'Step 7: '
 'Verify the control is displayed'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Login_Page/ddl_UserControl'), 10)
 
-'Step 13: '
+'Step 8: '
 'Select Logout in the User name control'
 WebUI.click(findTestObject('Object Repository/Login_Page/p_UserControlName'))
 WebUI.click(findTestObject('Object Repository/Login_Page/ddl_Logout'))
 
-'Step 14: '
+'Step 9: '
 'Verify that the Login form is displayed'
 WebUI.verifyElementPresent(findTestObject('Object Repository/Login_Page/p_LoginTitle'), 10)
 
-'Step 15: '
+'Step 10: '
 'Verify that the user control is disappeared'
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Login_Page/ddl_UserControl'), 10)
 

@@ -73,7 +73,7 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Main_Menu_Page/ic_L
 
 'Step 15: '
 'Type to Search textbox "My Info"'
-WebUI.setText(findTestObject('Object Repository/Main_Menu_Page/txt_Search'),  "My Info")
+WebUI.setText(findTestObject('Object Repository/Main_Menu_Page/txt_Search'), "My Info")
 
 'Step 16: '
 "Verify There's only My Info menu displays'"
