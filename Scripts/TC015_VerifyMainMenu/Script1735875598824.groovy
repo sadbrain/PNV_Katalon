@@ -89,10 +89,15 @@ for (WebElement span : filteredSpans) {
 
 WebUI.verifyEqual(isOnlyMyInfoDisplayed, true)
 
+'Clear text in the search field'
+WebUI.sendKeys(findTestObject('Object Repository/Main_Menu_Page/txt_Search'), Keys.chord(Keys.CONTROL, 'a'))
+WebUI.sendKeys(findTestObject('Object Repository/Main_Menu_Page/txt_Search'), Keys.chord(Keys.BACK_SPACE))
+
+
 'Step 17: '
 'Type to Search textbox "D"'
 WebUI.setText(findTestObject('Object Repository/Main_Menu_Page/txt_Search'), 'D')
-filteredSpans = WebUI.findWebElements(findTestObject('Object Repository/Main_Menu_Page/span_MyMenu'), 10, FailureHandling.CONTINUE_ON_FAILURE)
+filteredSpans = WebUI.findWebElements(findTestObject('Object Repository/Main_Menu_Page/span_MyMenu'), 10, FailureHandling.STOP_ON_FAILURE)
 boolean isOnlyDMenusDisplayed = true
 
 for (WebElement span : filteredSpans) {
@@ -102,7 +107,7 @@ for (WebElement span : filteredSpans) {
 	}
 }
 
-WebUI.verifyEqual(isOnlyDMenusDisplayed, true, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyEqual(isOnlyDMenusDisplayed, true, FailureHandling.STOP_ON_FAILURE)
 
 'Step 18: '
 'Click to "Dashboard" menu'
