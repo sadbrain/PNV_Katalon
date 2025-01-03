@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC004_VerifyCheckboxes</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>674c9a3c-4665-427b-94ad-c589218c17d9</testCaseGuid>
+</TestCaseEntity>
