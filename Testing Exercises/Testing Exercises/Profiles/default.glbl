@@ -14,4 +14,9 @@
       <initValue>'https://the-internet.herokuapp.com/'</initValue>
       <name>URL_HERROKUAPP</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://webdriveruniversity.com/Contact-Us/contactus.html'</initValue>
+      <name>URL_CONTACT</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
