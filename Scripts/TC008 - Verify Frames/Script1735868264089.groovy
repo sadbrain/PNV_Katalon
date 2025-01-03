@@ -21,12 +21,12 @@ import org.openqa.selenium.Keys as Keys
 'Open the browser and navigate to the URL'
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/frames')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/tinymce')
 
 'Step 2'
 
 'Retrieve and verify the header text'
-String actualHeaderText = WebUI.getText(findTestObject('Object Repository/Editor_Page/h3_HeaderTitle'))
+String actualHeaderText = WebUI.getText(findTestObject('Object Repository/TC008 - Verify Frames/h3_Title'))
 WebUI.comment('Actual Header Text: ' + actualHeaderText)
 WebUI.verifyMatch(actualHeaderText.trim(), 'An iFrame containing the TinyMCE WYSIWYG Editor', false)
 'Step 3: '
