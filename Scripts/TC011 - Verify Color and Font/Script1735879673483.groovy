@@ -16,44 +16,42 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-// Function to convert Hex color to RGB or RGBA based on the requirement
-def hexToColor(String hex, boolean includeAlpha = false) {
-    // Remove '#' if present
-    hex = hex.replace('#', '')
-    
-    // Parse the red, green, and blue values from the hex code
-    int r = Integer.parseInt(hex.substring(0, 2), 16)
-    int g = Integer.parseInt(hex.substring(2, 4), 16)
-    int b = Integer.parseInt(hex.substring(4, 6), 16)
-    
-    // If alpha is needed, return rgba (with alpha = 1), otherwise return rgb
-    if (includeAlpha) {
-        return "rgba($r, $g, $b, 1)"
-    } else {
-        return "rgb($r, $g, $b)"
-    }
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+def rgbaToHex(String rgba) {
+	def rgbaValues = rgba.replaceAll("[^0-9,]", "").split(",")
+	
+	int r = Integer.parseInt(rgbaValues[0])
+	int g = Integer.parseInt(rgbaValues[1])
+	int b = Integer.parseInt(rgbaValues[2])
+	
+	String hex = String.format("#%02X%02X%02X", r, g, b)
+	
+	return hex
 }
 
-// Step 1: Open browser and navigate to URL
+
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/challenging_dom')
 
-// Step 2: Verify the header is Challenging DOM
 WebUI.verifyTextPresent('Challenging DOM', false)
-
-// Step 3: Verify font size button 1 is 16px
 String fontSize = WebUI.getCSSValue(findTestObject('Object Repository/TC011 - Verify Color and Font/btn_Bar_Button'), 'font-size')
-WebUI.verifyMatch(fontSize, '16px', false, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyEqual(fontSize, "16px")
 
-// Step 4: Verify background button is #c60f13 (hex) converted to rgba
-def expectedRgba = hexToColor('#c60f13', true)  // Convert Hex to RGBA
-def actualColor = WebUI.getCSSValue(findTestObject('Object Repository/TC011 - Verify Color and Font/btn_foo_button'), 'background-color')
-WebUI.verifyMatch(actualColor, expectedRgba, false)
+String backgroundColor = WebUI.getCSSValue(findTestObject('Object Repository/TC011 - Verify Color and Font/btn_foo_button'), 'background-color')
 
-// Step 5: Verify border-color is #457a1a (hex) converted to rgb
-def expectedRgb = hexToColor('#457a1a', false)  // Convert Hex to RGB
-def actualBorder = WebUI.getCSSValue(findTestObject('Object Repository/TC011 - Verify Color and Font/btn_qux_button'), 'border-color')
-WebUI.verifyMatch(actualBorder, expectedRgb, false)
+String hexBackgroundColor = rgbaToHex(backgroundColor)
+
+WebUI.verifyEqual(hexBackgroundColor, '#C60F13')
+
+String borderColor = WebUI.getCSSValue(findTestObject('Object Repository/TC011 - Verify Color and Font/btn_qux_button'), 'border-color')
+
+String hexBorderColor = rgbaToHex(borderColor)
+
+WebUI.verifyEqual(hexBorderColor, '#457A1A')
 
 WebUI.closeBrowser()

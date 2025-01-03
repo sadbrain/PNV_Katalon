@@ -17,10 +17,11 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+"Step 1"
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
-'Step 2: '
+'Step 2 '
 'Get username text from the Login form'
 String usernameText = WebUI.getText(findTestObject('Object Repository/TC014 - Verify Login Function/p_UserName'))
 
@@ -33,7 +34,7 @@ WebUI.setText(findTestObject('Object Repository/TC014 - Verify Login Function/tx
 String enteredUsername = WebUI.getAttribute(findTestObject('Object Repository/TC014 - Verify Login Function/txt_UserName'), 'value')
 WebUI.verifyMatch(enteredUsername, username, false)
 
-'Step 3: '
+'Step 3 '
 'Get password text from the Login form'
 String passwordText = WebUI.getText(findTestObject('Object Repository/TC014 - Verify Login Function/p_Password'))
 
@@ -46,7 +47,7 @@ WebUI.setText(findTestObject('Object Repository/TC014 - Verify Login Function/tx
 String enteredPassword = WebUI.getAttribute(findTestObject('Object Repository/TC014 - Verify Login Function/txt_Password'), 'value')
 WebUI.verifyMatch(enteredPassword, password, false)
 
-'Step 4: '
+'Step 4 '
 'Click on the "Login" button in the login form'
 WebUI.click(findTestObject('Object Repository/TC014 - Verify Login Function/btn_Login'))
 
@@ -61,7 +62,7 @@ WebUI.verifyMatch(dashboardText, expectedTitle, false)
 'Verify the control is displayed'
 WebUI.verifyElementPresent(findTestObject('Object Repository/TC014 - Verify Login Function/ddl_Control'), 10)
 
-'Step 5: '
+'Step 5 '
 'Select Logout in the User name control'
 WebUI.click(findTestObject('Object Repository/TC014 - Verify Login Function/p_UserControlName'))
 WebUI.click(findTestObject('Object Repository/TC014 - Verify Login Function/ddl_Logout'))
@@ -72,5 +73,4 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/TC014 - Verify Logi
 'Verify that the user control is disappeared'
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/TC014 - Verify Login Function/ddl_Control'), 10)
 
-'Clean-up steps:'
 WebUI.closeBrowser()
