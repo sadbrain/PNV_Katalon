@@ -20,30 +20,25 @@ import org.openqa.selenium.Keys as Keys
 WebUI.openBrowser('')
 WebUI.navigateToUrl(GlobalVariable.HRM)
 
-
-
-// Lấy nội dung Username và Password từ màn hình
+// Step 1: Get User Name text and Get Password text from Login 
 String usernameText = WebUI.getText(findTestObject('Object Repository/Verify_LoginFunction/lbl_UserNameText')).split(': ')[1]
 String passwordText = WebUI.getText(findTestObject('Object Repository/Verify_LoginFunction/lbl_PasswordText')).split(': ')[1]
 
-// Điền Username vào ô input
+// Step 2: Input User Name and Password
 WebUI.setText(findTestObject('Object Repository/Verify_LoginFunction/txt_Username'), usernameText)
-
-// Điền Password vào ô input
 WebUI.setText(findTestObject('Object Repository/Verify_LoginFunction/txt_Password'), passwordText)
 
-
-// Step 4: Click on the Login button
+// Step 3: Click on the Login button
 WebUI.click(findTestObject('Object Repository/Verify_LoginFunction/btn_Login'))
 
-// Step 5: Verify The Dashboard page is loaded successfully
+// Step 4: Verify The Dashboard page is loaded successfully
 WebUI.verifyElementPresent(findTestObject('Object Repository/Verify_LoginFunction/hdr_Dashboard'), 10)
 
-// Step 6: Logout 
+// Step 5: Logout 
 WebUI.click(findTestObject('Object Repository/Verify_LoginFunction/btn_Profile'))
 WebUI.click(findTestObject('Object Repository/Verify_LoginFunction/lnk_Logout'))
 
-// Step 7: Verify Logout successfully
+// Step 6: Verify Logout successfully
 WebUI.verifyElementPresent(findTestObject('Object Repository/Verify_LoginFunction/txt_Username'), 10)
 
 WebUI.closeBrowser()
