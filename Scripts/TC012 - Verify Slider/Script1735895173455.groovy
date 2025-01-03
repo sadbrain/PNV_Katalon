@@ -16,16 +16,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
-
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
-WebUI.click(findTestObject('Object Repository/ColorandFontPage/lnk_ChallengingDOM'))
-WebUI.verifyElementText(findTestObject('Object Repository/ColorandFontPage/txt_HeaderTitle'), 'Challenging DOM')
-String fontSize = WebUI.getCSSValue(findTestObject('Object Repository/ColorandFontPage/btn_Button1'), 'font-size')
-WebUI.verifyMatch(fontSize, '16px', false)
-String backgroundColor = WebUI.getCSSValue(findTestObject('Object Repository/ColorandFontPage/btn_Button2'), 'background-color')
-WebUI.verifyMatch(backgroundColor, 'rgb(198, 15, 19)', false)
-String borderColor = WebUI.getCSSValue(findTestObject('Object Repository/ColorandFontPage/btn_Button3'), 'border-color')
-WebUI.verifyMatch(borderColor, 'rgb(69, 122, 26)', false)
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/horizontal_slider')
+
+WebUI.verifyElementText(findTestObject('Object Repository/TC012 - Verify Slider/txt_Horizontal Slider'), 'Horizontal Slider')
+for (int i = 0; i < 2; i++) { 
+    WebUI.sendKeys(findTestObject('Object Repository/TC012 - Verify Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
+}
+WebUI.verifyElementText(findTestObject('Object Repository/TC012 - Verify Slider/Slider_value'), '1')
+for (int i = 0; i < 3; i++) { 
+    WebUI.sendKeys(findTestObject('Object Repository/TC012 - Verify Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
+}
+WebUI.verifyElementText(findTestObject('Object Repository/TC012 - Verify Slider/Slider_value'), '2.5')
+for (int i = 0; i < 4; i++) { 
+    WebUI.sendKeys(findTestObject('Object Repository/TC012 - Verify Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
+}
+WebUI.verifyElementText(findTestObject('Object Repository/TC012 - Verify Slider/Slider_value'), '4.5')
 WebUI.closeBrowser()
