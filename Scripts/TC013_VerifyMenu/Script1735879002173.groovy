@@ -21,10 +21,11 @@ import java.nio.file.Files
 import java.nio.file.Paths
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
+WebUI.navigateToUrl(GlobalVariable.URL)
+
 WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_JQueryUIMenus'))
 
-// Verify Header Title only once after navigation
+// Verify Header Title
 WebUI.verifyElementText(findTestObject('Object Repository/Verify_Menu/lbl_HeaderTitle'), 'JQueryUI - Menu')
 
 // Interact with Menu
@@ -40,9 +41,7 @@ WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_CSV'))
 // Verify the file is downloaded
 String downloadPath = System.getProperty('user.home') + '/Downloads/menu.csv'
 boolean isFileDownloaded = false
-
-// Wait longer before checking for the file
-WebUI.delay(5) // Increased wait time
+WebUI.delay(5) 
 isFileDownloaded = Files.exists(Paths.get(downloadPath))
 
 // Verify the download status
