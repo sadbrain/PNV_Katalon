@@ -53,7 +53,7 @@ WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_Downloads')
 'Hover over and click "Enabled" menu item'
 WebUI.mouseOver(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_CSV'))
 WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_CSV'))
-
+WebUI.delay(2)
 'Verify the file is downloaded successfully'
 File downloadsDir = new File("C:\\Users\\admin\\Downloads")
 boolean fileExists = downloadsDir.listFiles().any { it.name.endsWith("menu.csv") }
