@@ -19,7 +19,7 @@ import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.Select
 
-// 1. Mở trình duyệt và truy cập URL
+
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 WebUI.click(findTestObject('Object Repository/Page_Dropdown/Lnk_Dropdown'))
