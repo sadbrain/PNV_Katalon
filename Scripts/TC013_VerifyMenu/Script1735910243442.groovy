@@ -24,21 +24,21 @@ WebUI.navigateToUrl(GlobalVariable.HEROKUAPP)
 WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_JQueryUIMenus'))
 WebUI.verifyEqual(WebUI.getText(findTestObject('Object Repository/Verify_Menu/hdr_JQueryUIMenus')),'JQueryUI - Menu')
 
-//Step 2: Choose Submenu and Verify
+//Step 2: Select Enabled -> JQuery UI menu and Verify
 WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_Enabled'))
 WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_SubMenuQueryMenu'))
 WebUI.verifyElementText(findTestObject('Object Repository/Verify_Menu/hdr_JQueryUI'), 'JQuery UI')
 
-//Step 3: Back Menu and Verify
+//Step 3: Click on Menu and Verify
 WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_Menu'))
 WebUI.verifyEqual(WebUI.getText(findTestObject('Object Repository/Verify_Menu/hdr_JQueryUIMenus')),'JQueryUI - Menu')
 
-//Step 4:
+//Step 4: Select Enabled -> Downloads -> CSV menu 
 WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_Enabled'))
 WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_SubMenuDownloads'))
 WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_SubMenuCSV'))
 
-// Step 8: Kiểm tra file CSV được tải xuống
+// Step 5: Verify file is saved to local successful
 String downloadPath = 'C:\\Users\\lenovo\\Downloads\\'
 String fileName = 'menu.csv'
 File csvFile = new File(downloadPath + fileName)
