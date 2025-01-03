@@ -17,6 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebElement
+
 // step 1 Go to https://the-internet.herokuapp.com/ and Select 'Drag and Drop' link
 
 WebUI.openBrowser(GlobalVariable.URL_HERROKUAPP)
@@ -34,8 +35,7 @@ String textAfterA = WebUI.getText(findTestObject('Object Repository/DragAndDrop_
 String textAfterB = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DropB'))
 
 // Assert that the text has swapped, indicating a successful drag-and-drop
-WebUI.verifyNotEqual(textAfterA, "A", FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyNotEqual(textAfterB, "B", FailureHandling.STOP_ON_FAILURE)
-
+WebUI.verifyNotEqual(textAfterA, "A", FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyNotEqual(textAfterB, "B", FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.closeBrowser()

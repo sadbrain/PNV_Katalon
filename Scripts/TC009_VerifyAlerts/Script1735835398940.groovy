@@ -49,7 +49,10 @@ WebUI.click( findTestObject('Object Repository/JavaScriptAlert_Page/btn_JSPrompt
 // Ensure the alert is present before interacting'
 WebUI.waitForAlert(10)
 // Set text "Hello" in the JS Prompt and click OK'
-WebUI.setAlertText("Hello")
+WebUI.setAlertText('Hello', FailureHandling.CONTINUE_ON_FAILURE)
 WebUI.acceptAlert()
 // Verify the result message for entering text in the prompt
-WebUI.verifyTextPresent("You entered: Hello", false)
+WebUI.verifyElementText(findTestObject('Object Repository/JavaScriptAlert_Page/p_Result') , 'You entered: Hello', FailureHandling.CONTINUE_ON_FAILURE)
+
+// Close Browser
+WebUI.closeBrowser()
