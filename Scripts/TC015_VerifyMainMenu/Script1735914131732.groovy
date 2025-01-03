@@ -54,13 +54,14 @@ WebUI.setText(findTestObject('Object Repository/Dashboard_Page/txt_Search'), "My
 // verify that there's only My Info menu displays
 TestObject testObj = findTestObject('Object Repository/Dashboard_Page/span_MenuItem')
 List <WebElement> elementsMyInfo = WebUI.findWebElements(testObj, 20)
-for (item in elementsMyInfo) {
-	if(item.getText().contains('My Info')) {
-		WebUI.verifyEqual(item.getText(), 'My Info')
-		break
-	}
-}
-//cách 2 : List<WebElement> filteredElements = elementsMyInfo.findAll { it.getText().contains("My Info") }
+//for (item in elementsMyInfo) {
+//	if(item.getText().contains('My Info')) {
+//		WebUI.verifyEqual(item.getText(), 'My Info')
+//		break
+//	}
+//}
+'cách 2 : '
+List<WebElement> filteredElements = elementsMyInfo.findAll { it.getText().contains("My Info") }
 
 // Clear text 
 WebUI.click(findTestObject('Object Repository/Dashboard_Page/txt_Search'))

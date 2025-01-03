@@ -24,4 +24,9 @@
       <initValue>'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</initValue>
       <name>LOGIN_URL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://webdriveruniversity.com/Accordion/index.html'</initValue>
+      <name>ACCORDIAN_URL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
