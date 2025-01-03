@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC010- Verify Key Presses</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>4506c20a-78b3-4002-8830-5a063cd67d39</testCaseGuid>
+</TestCaseEntity>
