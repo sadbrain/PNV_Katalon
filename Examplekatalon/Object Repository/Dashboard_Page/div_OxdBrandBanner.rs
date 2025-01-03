@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>checkbox_2</name>
+   <name>div_OxdBrandBanner</name>
    <tag></tag>
-   <elementGuidId>440e133a-8a53-4823-b055-30897d798b71</elementGuidId>
+   <elementGuidId>2e424954-187a-4412-8669-c65b40f66d4b</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@class=&amp;quot;oxd-brand-logo&amp;quot;]</value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//form[@id='checkboxes']/input[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

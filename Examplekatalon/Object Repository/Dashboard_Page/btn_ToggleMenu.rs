@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>checkbox_1</name>
+   <name>btn_ToggleMenu</name>
    <tag></tag>
-   <elementGuidId>1ab41b5a-d85f-4fcf-8719-0d8b92c55cd6</elementGuidId>
+   <elementGuidId>96d3065c-7524-41f3-b7df-e4f9ab2822c4</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//button[@role=&amp;quot;none&amp;quot;]</value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//form[@id='checkboxes']/input[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

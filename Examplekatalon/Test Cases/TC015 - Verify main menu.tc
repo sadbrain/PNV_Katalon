@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC004 - Verify Checkboxes</name>
+   <name>TC015 - Verify main menu</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>d431db4a-2429-48d3-bf93-7d1325782e21</testCaseGuid>
+   <testCaseGuid>3d3f9106-83f4-49e0-b4ef-bc18dbd78417</testCaseGuid>
 </TestCaseEntity>

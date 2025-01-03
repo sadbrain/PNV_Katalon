@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>link_Checkboxes</name>
+   <name>txt_Search</name>
    <tag></tag>
-   <elementGuidId>7aee7a42-0742-4f60-b8f8-957edd8c4658</elementGuidId>
+   <elementGuidId>4f648d1e-a532-4e3e-8b5e-541c5fabf8ce</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@placeholder=&amp;quot;Search&amp;quot;]</value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//a[text()='Checkboxes']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
