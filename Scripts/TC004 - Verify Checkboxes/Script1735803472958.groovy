@@ -18,21 +18,22 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 "Step 1"
+"Verify Checkboxes header title is displayed"
 WebUI.openBrowser('')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/checkboxes')
-
-"Step 2"
-"Checkboxes header title is displayed"
 WebUI.verifyTextPresent('Checkboxes', false, FailureHandling.CONTINUE_ON_FAILURE)
 
-"Step 3"
-"Checkbox button and un_button"
+"Check checkbox 1 and uncheck checkbox 2"
 WebUI.check(findTestObject('Object Repository/TC004 - Verify Checkboxes/chk_checkbox1'))
 WebUI.uncheck(findTestObject('Object Repository/TC004 - Verify Checkboxes/chk_uncheckbutton2'))
 
-"Step 4"
-"checkbox1 is checked and checkbox 2 is un-checked"
+"Verify checkbox 1 is checked and checkbox 2 is unchecked"
 WebUI.verifyElementChecked(findTestObject('Object Repository/TC004 - Verify Checkboxes/chk_checkbox1'), 0, FailureHandling.CONTINUE_ON_FAILURE)
 WebUI.verifyElementNotChecked(findTestObject('Object Repository/TC004 - Verify Checkboxes/chk_uncheckbutton2'), 0, FailureHandling.CONTINUE_ON_FAILURE)
+
+"Close the browser"
+WebUI.closeBrowser()
+
 
 

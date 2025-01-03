@@ -16,30 +16,40 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.Select
 
+
+"Step 1"
+"JavaScript Alerts header title is displayed"
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/javascript_alerts')
+WebUI.verifyTextPresent('JavaScript Alerts', false)
 
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/dropdown')
-WebUI.verifyTextPresent('Dropdown List', false)
-
-WebUI.click(findTestObject('Object Repository/TC006 - Verify Dropdown/ddl_label Select Option'))
-
-WebElement dropdown = WebUI.findWebElement(findTestObject('Object Repository/TC006 - Verify Dropdown/ddl_option1'))
-Select select = new Select(dropdown)
+"Step 2"
+'Clicking on  button Click for JS Alert'
+WebUI.click(findTestObject('Object Repository/TC009 - Verify Alerts/btn_Click for JS Alert'))
 
 
-select.selectByVisibleText('Option 2')
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
+'Accepting the Alert'
+WebUI.acceptAlert()
+WebUI.verifyTextPresent('You successfully clicked an alert', false)
 
+"Step 3"
+"Clicking on button I am a JS Confirm"
+WebUI.click(findTestObject('Object Repository/TC009 - Verify Alerts/btn_I am a JS Confirm'))
+'Dismiss the Alert '
+WebUI.dismissAlert()
+WebUI.verifyTextPresent('You clicked: Cancel', false)
 
-select.selectByIndex(1)
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 1', false)
+"Step 4"
+"Clicking button Click for JS Prompt"
+WebUI.click(findTestObject('Object Repository/TC009 - Verify Alerts/btn_Click for JS Prompt'))
 
-
-select.selectByValue('2')
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
+WebUI.setAlertText('Hello')
 
 WebUI.closeBrowser()
+
+
+
+
+

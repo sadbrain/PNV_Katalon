@@ -16,30 +16,4 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.Select
 
-WebUI.openBrowser('')
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
-
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/dropdown')
-WebUI.verifyTextPresent('Dropdown List', false)
-
-WebUI.click(findTestObject('Object Repository/TC006 - Verify Dropdown/ddl_label Select Option'))
-
-WebElement dropdown = WebUI.findWebElement(findTestObject('Object Repository/TC006 - Verify Dropdown/ddl_option1'))
-Select select = new Select(dropdown)
-
-
-select.selectByVisibleText('Option 2')
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
-
-
-select.selectByIndex(1)
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 1', false)
-
-
-select.selectByValue('2')
-WebUI.verifyMatch(select.getFirstSelectedOption().getText(), 'Option 2', false)
-
-WebUI.closeBrowser()

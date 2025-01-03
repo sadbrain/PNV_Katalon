@@ -20,14 +20,14 @@ import org.openqa.selenium.Keys as Keys
 "Step 1"
 "'File Uploader header title is displayed"
 WebUI.openBrowser('')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/upload')
-WebUI.verifyTextPresent('File Uploader', false)
+
+WebUI.verifyElementText(findTestObject('Object Repository/TC007 - Verify File Upload/txt_Header_File Upload'), 'File Uploader')
 
 "Step 2"
 "The png file is upload successful"
 WebUI.uploadFile(findTestObject('Object Repository/TC007 - Verify File Upload/btn_Choose File'), 'C:\\Users\\Lan Anh\\Pictures\\2023_06_17_21_32_IMG_2457.JPG')
-
-
 
 'Step 4: Click the Upload button'
 WebUI.click(findTestObject('Object Repository/TC007 - Verify File Upload/btn_Upload'))
