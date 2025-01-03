@@ -14,4 +14,9 @@
       <initValue>'https://webdriveruniversity.com/Click-Buttons/index.html'</initValue>
       <name>CLICKBUTTON_URL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://the-internet.herokuapp.com/'</initValue>
+      <name>MENU_URL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
