@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC011_VerifyColorAndFont</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e610254d-ba3e-4b74-b02c-402743add56a</testCaseGuid>
+</TestCaseEntity>
