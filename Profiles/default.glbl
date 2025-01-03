@@ -14,4 +14,9 @@
       <initValue>'https://webdriveruniversity.com/Click-Buttons/index.html'</initValue>
       <name>CLICKME</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://webdriveruniversity.com/Accordion/index.html'</initValue>
+      <name>ACCORDIAN</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
