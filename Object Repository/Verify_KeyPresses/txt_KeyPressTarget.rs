@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lb_Result</name>
+   <name>txt_KeyPressTarget</name>
    <tag></tag>
-   <elementGuidId>80bc8aba-494f-4c00-bb85-f342a83e57db</elementGuidId>
+   <elementGuidId>86d9fa08-4b96-4844-9e8c-d69084f46065</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//p[@id='result']</value>
+         <value>//input[@id='target']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

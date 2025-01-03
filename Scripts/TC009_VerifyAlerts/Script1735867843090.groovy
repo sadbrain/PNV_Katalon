@@ -31,10 +31,8 @@ WebUI.navigateToUrl(GlobalVariable.URL)
 WebUI.click(findTestObject('Object Repository/Verify_Alerts/lnk_JavaScriptAlerts'))
 
 // Verify header title of JavaScript Alerts page
-String pageTitle = WebUI.getText(findTestObject('Object Repository/Verify_Alerts/lb_HeaderTitle'))
-
-// So sánh với giá trị mong đợi
-assert pageTitle == 'JavaScript Alerts' : "Page title is incorrect! Actual title: " + pageTitle
+String pageTitle = WebUI.getText(findTestObject('Object Repository/Verify_Alerts/lbl_HeaderTitle'))
+assert pageTitle == 'JavaScript Alerts' : "Page title is incorrect" 
 
 // Check JS Alert
 WebUI.click(findTestObject('Object Repository/Verify_Alerts/btn_JSAlert'))
