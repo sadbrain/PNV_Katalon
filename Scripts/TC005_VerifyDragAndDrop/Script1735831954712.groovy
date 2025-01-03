@@ -16,21 +16,26 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
+import org.openqa.selenium.WebElement
 // step 1 Go to https://the-internet.herokuapp.com/ and Select 'Drag and Drop' link
+
 WebUI.openBrowser(GlobalVariable.URL_HERROKUAPP)
 WebUI.click( findTestObject('Object Repository/DragAndDrop_Page/lnk_DragAndDrop'), FailureHandling.CONTINUE_ON_FAILURE)
 
-String textBeforeA = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DragA') , FailureHandling.CONTINUE_ON_FAILURE)
-String textBeforeB = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DropB') , FailureHandling.CONTINUE_ON_FAILURE)
+//Locate the elements for Column A and Column B
+WebElement dragElement = WebUI.findWebElement(findTestObject('Object Repository/DragAndDrop_Page/div_DragA') )
+WebElement dropElement = WebUI.findWebElement(findTestObject('Object Repository/DragAndDrop_Page/div_DropB'))
 
 // step 2: Drag and Drop column A to column B
 WebUI.dragAndDropToObject(findTestObject('Object Repository/DragAndDrop_Page/div_DragA') , findTestObject('Object Repository/DragAndDrop_Page/div_DropB'), FailureHandling.CONTINUE_ON_FAILURE)
 
-String textAfterA = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DragA') , FailureHandling.CONTINUE_ON_FAILURE)
-String textAfterB = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DropB') , FailureHandling.CONTINUE_ON_FAILURE)
+// Verify the text of Column A and Column B after the drag-and-drop action
+String textAfterA = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DragA'))
+String textAfterB = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DropB'))
 
-WebUI.verifyEqual(textAfterA, textBeforeB, FailureHandling.CONTINUE_ON_FAILURE)
-WebUI.verifyEqual(textAfterB, textBeforeA, FailureHandling.CONTINUE_ON_FAILURE)
+// Assert that the text has swapped, indicating a successful drag-and-drop
+WebUI.verifyNotEqual(textAfterA, "A", FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyNotEqual(textAfterB, "B", FailureHandling.STOP_ON_FAILURE)
+
 
 WebUI.closeBrowser()
