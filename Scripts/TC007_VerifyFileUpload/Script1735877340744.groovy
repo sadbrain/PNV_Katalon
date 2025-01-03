@@ -20,13 +20,16 @@ import org.openqa.selenium.Keys as Keys
 WebUI.openBrowser('')
 WebUI.navigateToUrl(GlobalVariable.HEROKUAPP)
 
+//step 1: open link File Upload
 WebUI.click(findTestObject('Object Repository/Verify_FileUpload/btn_ChooseFile'))
 
-//verify header
+//step 2: Verify header
 String headerText = WebUI.getText(findTestObject('Object Repository/Verify_FileUpload/hdr_FileUpload'))
 WebUI.verifyEqual(headerText, "File Uploader")
 
+//step 3: Upload image
 String filePath = 'C:\\Users\\lenovo\\Downloads\\rina.png'
 WebUI.uploadFile(findTestObject('Object Repository/Verify_FileUpload/btn_Upload'), filePath)
 
+//step 4: Click on the Upload button
 WebUI.click(findTestObject('Object Repository/Verify_FileUpload/lnk_FileUpload'))
