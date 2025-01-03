@@ -17,21 +17,37 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+String webElementContent = "Well done for successfully using the click() method!"
+String javascriptHeader = "It’s that Easy!! Well I think it is....."
+String javaScriptBody = "We can use JavaScript code if all else fails! Remember always try to use the WebDriver Library method(s) first such as WebElement.click(). (The Selenium development team have spent allot of time developing WebDriver functions etc)."
+String actionMoveContent = "Well done! the Action Move & Click can become very useful!\nAdvanced user interactions (API) has been developed to enable you to perform more complex interactions such as:"
+String listAction = "\nDrag & Drop\nHover & Click\nClick & Hold...."
 
-//Verify WebElement Click section
-WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_WebElementClick'))
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
-WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_CloseWebElement'))
+// step 1: Open browser and Go to http://webdriveruniversity.com/Click-Buttons/index.html
+WebUI.openBrowser('https://webdriveruniversity.com/Click-Buttons/index.html')
 
-//Verify JavaScript Click section
-WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_JavaScriptClick'))
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_CloseJavaScript'))
+// step 2: Click to "Click Me" button in WebElement Click section
+WebUI.click(findTestObject('Object Repository/ClickButton_Page/btn_WebElement') , FailureHandling.CONTINUE_ON_FAILURE)
+
+// Verify text dislay :
+WebUI.verifyTextPresent(webElementContent , false, FailureHandling.CONTINUE_ON_FAILURE)
+
+// step 3: Close the modal and Click to "Click Me" button in JavaScript Click section
+WebUI.click(findTestObject('Object Repository/ClickButton_Page/btn_WebElementClose') , FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/ClickButton_Page/btn_JavaScript') , FailureHandling.CONTINUE_ON_FAILURE)
 
 
-//Verify Action Move & Click section
-WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_ActionMoveClick'))
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_CloseActionMove'))
+// Verify text dislay :
+WebUI.verifyTextPresent(javascriptHeader, false)
+WebUI.verifyTextPresent(javaScriptBody, false)
+// Step 4 : Close the dialog and Click to "Click Me" button in Action Move & Click
+WebUI.click(findTestObject('Object Repository/ClickButton_Page/btn_JavaScriptClose') , FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/ClickButton_Page/btn_ActionMove') , FailureHandling.CONTINUE_ON_FAILURE)
+
+// Verify text display
+WebUI.verifyTextPresent(actionMoveContent, false)
+WebUI.verifyTextPresent(listAction, false)
+
+// Close Modal and Browser
+WebUI.click( findTestObject('Object Repository/ClickButton_Page/btn_ActionMoveClose'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.closeBrowser()

@@ -17,20 +17,21 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
-WebUI.click(findTestObject('Page_Home/lnk_DragAndDrop'))
 
-WebUI.verifyElementText(findTestObject('Page_DragAndDrop/header_Title'), 'Drag and Drop')
+// step 1 Go to https://the-internet.herokuapp.com/ and Select 'Drag and Drop' link
+WebUI.openBrowser(GlobalVariable.URL_HERROKUAPP)
+WebUI.click( findTestObject('Object Repository/DragAndDrop_Page/lnk_DragAndDrop'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebElement columnA = WebUI.findWebElement(findTestObject('Page_DragAndDrop/column_A'))
-WebElement columnB = WebUI.findWebElement(findTestObject('Page_DragAndDrop/column_B'))
-Actions actions = new Actions(DriverFactory.getWebDriver())
-actions.dragAndDrop(columnA, columnB).perform()
+String textBeforeA = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DragA') , FailureHandling.CONTINUE_ON_FAILURE)
+String textBeforeB = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DropB') , FailureHandling.CONTINUE_ON_FAILURE)
 
-String columnAText = WebUI.getText(findTestObject('Page_DragAndDrop/column_A'))
-String columnBText = WebUI.getText(findTestObject('Page_DragAndDrop/column_B'))
-assert columnAText == 'B'
-assert columnBText == 'A'
+// step 2: Drag and Drop column A to column B
+WebUI.dragAndDropToObject(findTestObject('Object Repository/DragAndDrop_Page/div_DragA') , findTestObject('Object Repository/DragAndDrop_Page/div_DropB'), FailureHandling.CONTINUE_ON_FAILURE)
+
+String textAfterA = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DragA') , FailureHandling.CONTINUE_ON_FAILURE)
+String textAfterB = WebUI.getText(findTestObject('Object Repository/DragAndDrop_Page/div_DropB') , FailureHandling.CONTINUE_ON_FAILURE)
+
+WebUI.verifyEqual(textAfterA, textBeforeB, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyEqual(textAfterB, textBeforeA, FailureHandling.CONTINUE_ON_FAILURE)
 
 WebUI.closeBrowser()

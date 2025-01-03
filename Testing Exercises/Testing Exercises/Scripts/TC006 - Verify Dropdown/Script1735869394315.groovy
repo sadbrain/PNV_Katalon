@@ -17,28 +17,28 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser(GlobalVariable.URL)
+WebUI.openBrowser(GlobalVariable.URL_HERROKUAPP)
 
 'step 1: Select Dropdown link'
-WebUI.click(findTestObject('Object Repository/Verify_Dropdown/lnk_Dropdown'))
+WebUI.click(findTestObject('Object Repository/Dropdown_Page/lnk_Dropdown'))
 'Verify Dropdown List header title is displayed'
-String title = WebUI.getText(findTestObject('Object Repository/Verify_Dropdown/h3_DropListTitle'))
+String title = WebUI.getText(findTestObject('Object Repository/Dropdown_Page/h3_DropListTitle'))
 WebUI.verifyEqual(title, 'Dropdown List', FailureHandling.CONTINUE_ON_FAILURE)
 
 'step 2: Select item by label'
-WebUI.selectOptionByLabel( findTestObject('Object Repository/Verify_Dropdown/ddl_DropList'), 'Option 2', false, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.selectOptionByLabel( findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 'Option 2', false, FailureHandling.CONTINUE_ON_FAILURE)
 'Verifying the Option is Selected by Label option: Option 2'
-WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Verify_Dropdown/ddl_DropList'), 'Option 2', false, 0, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 'Option 2', false, 0, FailureHandling.CONTINUE_ON_FAILURE)
 
 'step 3: Select item by index 1'
-WebUI.selectOptionByIndex(findTestObject('Object Repository/Verify_Dropdown/ddl_DropList') , 1, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.selectOptionByIndex(findTestObject('Object Repository/Dropdown_Page/ddl_DropList') , 1, FailureHandling.CONTINUE_ON_FAILURE)
 'Verifying the Option is Selected by Index option: 1'
-WebUI.verifyOptionSelectedByIndex(findTestObject('Object Repository/Verify_Dropdown/ddl_DropList'), 1, 0, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyOptionSelectedByIndex(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 1, 0, FailureHandling.CONTINUE_ON_FAILURE)
 
 'step 4: Select item by value 2'
-WebUI.selectOptionByValue(findTestObject('Object Repository/Verify_Dropdown/ddl_DropList') , '2', false, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.selectOptionByValue(findTestObject('Object Repository/Dropdown_Page/ddl_DropList') , '2', false, FailureHandling.CONTINUE_ON_FAILURE)
 'verify the Option is select by Value : Option 2'
-WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Verify_Dropdown/ddl_DropList'), '2', false, 0, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), '2', false, 0, FailureHandling.CONTINUE_ON_FAILURE)
 
 'close browser'
 WebUI.closeBrowser()

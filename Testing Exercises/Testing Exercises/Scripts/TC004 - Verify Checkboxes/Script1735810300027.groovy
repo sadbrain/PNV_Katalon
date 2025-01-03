@@ -56,18 +56,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
+WebUI.openBrowser(GlobalVariable.URL_HERROKUAPP)
 
-WebUI.click(findTestObject('Object Repository/Verify_Checkboxes/link_Checkboxes'))
+'step 1: Select Checkboxes link'
+WebUI.click(findTestObject('Object Repository/Checkboxes_Page/lnk_Checkboxes') , FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Checkboxes/header_Checkboxes'), 'Checkboxes')
+'step 2: Check checkbox1'
+WebUI.click( findTestObject('Object Repository/Checkboxes_Page/chk_Checkbox1'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.check(findTestObject('Object Repository/Verify_Checkboxes/checkbox_1'))
-WebUI.uncheck(findTestObject('Object Repository/Verify_Checkboxes/checkbox_2'))
-
-WebUI.verifyElementChecked(findTestObject('Object Repository/Verify_Checkboxes/checkbox_1'), 5)
-
-WebUI.verifyElementNotChecked(findTestObject('Object Repository/Verify_Checkboxes/checkbox_2'), 5)
-
+'step 3: Verify'
+'checkbox1 is checked'
+WebUI.verifyElementChecked(findTestObject('Object Repository/Checkboxes_Page/chk_Checkbox1'), 0)
+'checkbox 2 is un-checked'
+WebUI.click(findTestObject('Object Repository/Checkboxes_Page/chk_Checkbox2') , FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementNotChecked(findTestObject('Object Repository/Checkboxes_Page/chk_Checkbox2'), 0)
+'Close Browser'
 WebUI.closeBrowser()

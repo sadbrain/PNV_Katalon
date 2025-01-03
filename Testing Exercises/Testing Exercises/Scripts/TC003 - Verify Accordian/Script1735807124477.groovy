@@ -19,29 +19,32 @@ import org.openqa.selenium.Keys as Keys
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Accordion/index.html')
+// step 1 : Go to http://webdriveruniversity.com/Accordion/index.html
+WebUI.openBrowser(GlobalVariable.URL_ACCORDION)
 
+int timeout = 10 // Maximum time
+int elapsed = 0 //elapsed time
 
-retries = 15
-textChanged = false
+String expectedTimeoutText = 'This text has appeared after 5 seconds!'
+String expectedChange = 'LOADING COMPLETE.'
+String textChange
 
-for (int i = 0; i < retries; i++) {
-	String currentText = WebUI.getText(findTestObject('Object Repository/Verify_Accordian/p_HiddenText'))
-	if (currentText.contains('LOADING COMPLETE')) {
-		textChanged = true
+while (elapsed < timeout) {
+	textChange = WebUI.getText(findTestObject('Object Repository/Accordion_page/lbl_HiddenText') , FailureHandling.CONTINUE_ON_FAILURE)
+	if (textChange == 'LOADING COMPLETE.') {
 		break
 	}
-	WebUI.delay(2)
+	WebUI.delay(1)
+	elapsed++
 }
 
-if (!textChanged) {
-	WebUI.comment('Text did not change to "LOADING COMPLETE"')
-	assert false
-}
+// Verify
+WebUI.verifyMatch(textChange, expectedChange, false, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Verify_Accordian/btn_KeepClicking'))
+// Step 2: Click to "Keep Clicking! - Text will Appear After 5 Seconds!" accordian item
+WebUI.click(findTestObject('Object Repository/Accordion_page/btn_KeepClick'), FailureHandling.CONTINUE_ON_FAILURE)
+String textTimeout = WebUI.getText(findTestObject('Object Repository/Accordion_page/lbl_TimeoutText'), FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyEqual(textTimeout,expectedTimeoutText , FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Accordian/txt_TextAfterClick'), 'This text has appeared after 5 seconds!')
-
+// close browser
 WebUI.closeBrowser()
