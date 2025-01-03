@@ -19,31 +19,23 @@ import org.openqa.selenium.Keys as Keys
 
 'Pre-condition steps: '
 'Open the browser and navigate to the URL'
-WebUI.openBrowser(GlobalVariable.URL_CONTACT)
+WebUI.openBrowser(GlobalVariable.URL_HEROKU)
 
-'Step 1:'
-'Enter first name into the "FName" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_FirstName'), 'FName')
+'step 1: '
+'Select Checkboxes link'
+WebUI.click(findTestObject('Object Repository/Heroku_Page/lnk_Checkboxes'))
 
-'Step 2:'
-'Enter last name into the "LName" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_LastName'), 'LName')
+'step 2: '
+'Check checkbox1'
+WebUI.click(findTestObject('Object Repository/Checkbox_Page/chk_Checkbox1'))
+'step 2: unCheck checkbox2'
+WebUI.click(findTestObject('Object Repository/Checkbox_Page/chk_Checkbox2'))
 
-'Step 3:'
-'Enter email into the "Email" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_email'), 'test@gmail.com')
-
-'Step 4:'
-'Enter comment into the "Comment" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txa_Comment'), 'This is a comment')
-
-'Step 5:'
-'Click the "Submit" button'
-WebUI.click(findTestObject('Object Repository/Contact_Page/btn_Submit'))
-
-'Step 6:'
-'Verify The message "Thank You for your Message!" should be displayed.'
-WebUI.verifyTextPresent('Thank You for your Message!', false)
+'step 3: '
+'Verify checkbox1 is checked'
+WebUI.verifyElementChecked(findTestObject('Object Repository/Checkbox_Page/chk_Checkbox1'), 0)
+'Verify checkbox 2 is un-checked'
+WebUI.verifyElementNotChecked(findTestObject('Object Repository/Checkbox_Page/chk_Checkbox2'), 0)
 
 'Clean-up steps:'
 WebUI.closeBrowser()

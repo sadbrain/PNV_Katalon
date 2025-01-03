@@ -16,34 +16,34 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
+import com.kms.katalon.core.webui.driver.DriverFactory
 
 'Pre-condition steps: '
 'Open the browser and navigate to the URL'
-WebUI.openBrowser(GlobalVariable.URL_CONTACT)
+WebUI.openBrowser(GlobalVariable.URL_HEROKU)
 
-'Step 1:'
-'Enter first name into the "FName" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_FirstName'), 'FName')
+'step 1: '
+'navigate to Drag And Drop page'
+WebUI.click(findTestObject('Object Repository/Heroku_Page/lnk_DragAndDrop'))
 
-'Step 2:'
-'Enter last name into the "LName" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_LastName'), 'LName')
+//Locate the elements for Column A and Column B
+WebElement dragElement = WebUI.findWebElement(findTestObject('Object Repository/Drag_And_Drop_Page/div_DragA'))
+WebElement dropElement = WebUI.findWebElement(findTestObject('Object Repository/Drag_And_Drop_Page/div_DropB'))
 
-'Step 3:'
-'Enter email into the "Email" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_email'), 'test@gmail.com')
+'step 2: '
+'Use Selenium Actions to perform the drag-and-drop operation'
+Actions action = new Actions(DriverFactory.getWebDriver())
+action.dragAndDrop(dragElement, dropElement).build().perform()
 
-'Step 4:'
-'Enter comment into the "Comment" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txa_Comment'), 'This is a comment')
+// Verify the text of Column A and Column B after the drag-and-drop action
+String textAfterA = WebUI.getText(findTestObject('Object Repository/Drag_And_Drop_Page/div_DragA'))
+String textAfterB = WebUI.getText(findTestObject('Object Repository/Drag_And_Drop_Page/div_DropB'))
 
-'Step 5:'
-'Click the "Submit" button'
-WebUI.click(findTestObject('Object Repository/Contact_Page/btn_Submit'))
-
-'Step 6:'
-'Verify The message "Thank You for your Message!" should be displayed.'
-WebUI.verifyTextPresent('Thank You for your Message!', false)
+'Assert that the text has swapped, indicating a successful drag-and-drop'
+WebUI.verifyNotEqual(textAfterA, "A", FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyNotEqual(textAfterB, "B", FailureHandling.STOP_ON_FAILURE)
 
 'Clean-up steps:'
 WebUI.closeBrowser()

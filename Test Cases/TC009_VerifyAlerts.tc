@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC009_VerifyAlerts</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>713a5736-b3a6-4bd6-871d-5174c40052fb</testCaseGuid>
+</TestCaseEntity>

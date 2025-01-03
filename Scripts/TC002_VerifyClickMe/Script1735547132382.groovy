@@ -46,7 +46,6 @@ WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_CloseDialog_Java
 'Step 5:'
 'Click to "Click Me" button in Action Move & Click section'
 WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_ClickMe_ActionMoveClick'))
-'ER: A modal should display with content "Well done! the Action Move & Click can become very useful! Advanced user interactions (API) has been developed to enable you to perform more complex interactions such as: Drag & Drop, Hover & Click, Click & Hold...."'
 
 'Step 6:'
 'Verify that modal content is displayed with the correct text'

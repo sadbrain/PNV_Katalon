@@ -19,31 +19,31 @@ import org.openqa.selenium.Keys as Keys
 
 'Pre-condition steps: '
 'Open the browser and navigate to the URL'
-WebUI.openBrowser(GlobalVariable.URL_CONTACT)
+WebUI.openBrowser(GlobalVariable.URL_HEROKU)
 
-'Step 1:'
-'Enter first name into the "FName" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_FirstName'), 'FName')
+'Step 1: '
+'Navigate to press key page'
+WebUI.click(findTestObject('Object Repository/Heroku_Page/lnk_KeyPresses'))
+'Verify Key Presses title is diplayed'
+WebUI.verifyElementText(findTestObject('Object Repository/Key_Presses_Page/h_KeyPressesTitle'), 'Key Presses')
 
-'Step 2:'
-'Enter last name into the "LName" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_LastName'), 'LName')
+'Step 2: '
+'Press TAB key'
+WebUI.sendKeys(findTestObject('Object Repository/Key_Presses_Page/frm_KeyPressesForm'), Keys.chord(Keys.TAB))
+'Verify the Messagse "You entered: TAB" is displayed'
+WebUI.verifyElementText(findTestObject('Object Repository/Key_Presses_Page/p_KeyPressResult'), 'You entered: TAB')
 
-'Step 3:'
-'Enter email into the "Email" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_email'), 'test@gmail.com')
+'Step 3: '
+'Press ENTER key'
+WebUI.sendKeys(findTestObject('Object Repository/Key_Presses_Page/frm_KeyPressesForm'), Keys.chord(Keys.ENTER))
+'Verify the Messagse "You entered: ENTER" is displayed'
+WebUI.verifyElementText(findTestObject('Object Repository/Key_Presses_Page/p_KeyPressResult'), 'You entered: ENTER')
 
-'Step 4:'
-'Enter comment into the "Comment" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txa_Comment'), 'This is a comment')
-
-'Step 5:'
-'Click the "Submit" button'
-WebUI.click(findTestObject('Object Repository/Contact_Page/btn_Submit'))
-
-'Step 6:'
-'Verify The message "Thank You for your Message!" should be displayed.'
-WebUI.verifyTextPresent('Thank You for your Message!', false)
+'Step 4: '
+'Press G key'
+WebUI.sendKeys(findTestObject('Object Repository/Key_Presses_Page/frm_KeyPressesForm'), Keys.chord("G"))
+'Verify the Messagse "You entered: G" is displayed'
+WebUI.verifyElementText(findTestObject('Object Repository/Key_Presses_Page/p_KeyPressResult'), 'You entered: G')
 
 'Clean-up steps:'
 WebUI.closeBrowser()

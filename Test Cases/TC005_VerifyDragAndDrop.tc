@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC005_VerifyDragAndDrop</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>303d6895-569c-401d-bdff-d4af55ac2b4c</testCaseGuid>
+</TestCaseEntity>

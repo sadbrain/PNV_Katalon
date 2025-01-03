@@ -19,31 +19,28 @@ import org.openqa.selenium.Keys as Keys
 
 'Pre-condition steps: '
 'Open the browser and navigate to the URL'
-WebUI.openBrowser(GlobalVariable.URL_CONTACT)
+WebUI.openBrowser(GlobalVariable.URL_HEROKU)
 
-'Step 1:'
-'Enter first name into the "FName" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_FirstName'), 'FName')
+'Step 1: '
+'Click on the "WYSIWYG Editor" link'
+WebUI.click(findTestObject('Object Repository/Heroku_Page/lnk_WYSIWYGEditor'))
 
-'Step 2:'
-'Enter last name into the "LName" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_LastName'), 'LName')
+'Verify that the title of the page contains the expected text'
+WebUI.verifyTextPresent(WebUI.getText(findTestObject('Object Repository/TinyMCE_Page/h3_Title')), false)
 
-'Step 3:'
-'Enter email into the "Email" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txt_email'), 'test@gmail.com')
+'Step 2: '
+'Switch to the iframe containing the TinyMCE editor'
+WebUI.switchToFrame(findTestObject('Object Repository/TinyMCE_Page/iframe_TinyMCEEditor'), 10)
 
-'Step 4:'
-'Enter comment into the "Comment" text box'
-WebUI.setText(findTestObject('Object Repository/Contact_Page/txa_Comment'), 'This is a comment')
+'Step 3: '
+'Verify the default content inside the editor'
+String actualDefaultContent = WebUI.getText(findTestObject('Object Repository/TinyMCE_Page/txt_Content'))
+String expectedDefaultContent = 'Your content goes here.'
+WebUI.verifyEqual(actualDefaultContent, expectedDefaultContent)
 
-'Step 5:'
-'Click the "Submit" button'
-WebUI.click(findTestObject('Object Repository/Contact_Page/btn_Submit'))
-
-'Step 6:'
-'Verify The message "Thank You for your Message!" should be displayed.'
-WebUI.verifyTextPresent('Thank You for your Message!', false)
+'Step 4: '
+'Switch back to the main page and close the browser'
+WebUI.switchToDefaultContent()
 
 'Clean-up steps:'
 WebUI.closeBrowser()
