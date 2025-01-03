@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>ddl_UserNameControl</name>
+   <name>span_MyInfor</name>
    <tag></tag>
-   <elementGuidId>2d4c14a1-85bb-4fe4-95e8-6e9009e4fa23</elementGuidId>
+   <elementGuidId>ab0a02ba-0abe-4418-88d9-d4851a5c1ce1</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;app&quot;]/div[1]/div[1]/header/div[1]/div[3]/ul/li</value>
+         <value>//*[@id=&quot;app&quot;]/div[1]/div[1]/aside/nav/div[2]/ul/li[6]/a/span</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

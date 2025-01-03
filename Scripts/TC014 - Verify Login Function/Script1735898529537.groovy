@@ -34,7 +34,7 @@ WebUI.setText(findTestObject('Object Repository/014 - Verify Login Function/txt_
 WebUI.click(findTestObject('Object Repository/014 - Verify Login Function/btn_Login'))
 
 'Step 4: Choose Log out in user name control'
-WebUI.click( findTestObject('Object Repository/014 - Verify Login Function/ddl_UserNameControl'))
+WebUI.click( findTestObject('Object Repository/014 - Verify Login Function/ddl_UserControl'))
 WebUI.click(findTestObject('Object Repository/014 - Verify Login Function/option_LogOut') )
 
 WebUI.closeBrowser()
