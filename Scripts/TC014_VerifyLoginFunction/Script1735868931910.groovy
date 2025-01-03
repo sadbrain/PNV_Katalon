@@ -70,4 +70,6 @@ WebUI.verifyElementPresent(findTestObject('Object Repository/Login_Page/p_LoginT
 'Verify that the user control is disappeared'
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Login_Page/ddl_UserControl'), 10)
 
+'Close Browser'
+WebUI.closeBrowser()
 

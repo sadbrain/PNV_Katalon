@@ -74,3 +74,6 @@ WebUI.acceptAlert()
 'Step 13: '
 'Verify the result message for entering text in the prompt'
 WebUI.verifyTextPresent("You entered: Hello", false)
+
+'Close Browser'
+WebUI.closeBrowser()

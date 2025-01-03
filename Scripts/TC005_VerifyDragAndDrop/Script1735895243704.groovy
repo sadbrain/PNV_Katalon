@@ -16,46 +16,34 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
+import com.kms.katalon.core.webui.driver.DriverFactory
 
 'Pre-condition steps: '
 'Open the browser and navigate to the URL'
 WebUI.openBrowser(GlobalVariable.URL_HEROKU)
 
-'Step 1: '
-'Navigate to javaScript Alerts page'
-WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/lnk_JQueryUIMenu'))
+'step 1: '
+'navigate to Drag And Drop page'
+WebUI.click(findTestObject('Object Repository/Drag_And_Drop_Page/lnk_DragAndDrop'))
 
-'Step 2: '
-'Verify that "JQueryUI - Menu" header title is displayed'
-WebUI.verifyTextPresent(("JQueryUI - Menu"), false)
+'Locate the elements for Column A and Column B'
+WebElement dragElement = WebUI.findWebElement(findTestObject('Object Repository/Drag_And_Drop_Page/div_DragA'))
+WebElement dropElement = WebUI.findWebElement(findTestObject('Object Repository/Drag_And_Drop_Page/div_DropB'))
 
-'Step 3: '
-'Click on the "Enabled" menu item in the JQuery UI menu'
-WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_Enabled'))
+'step 2: '
+'Use Selenium Actions to perform the drag-and-drop operation'
+Actions action = new Actions(DriverFactory.getWebDriver())
+action.dragAndDrop(dragElement, dropElement).build().perform()
 
-'Step 4: '
-'Click on the JQuery UI menu'
-WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_JQueryUI'))
+'Verify the text of Column A and Column B after the drag-and-drop action'
+String textAfterA = WebUI.getText(findTestObject('Object Repository/Drag_And_Drop_Page/div_DragA'))
+String textAfterB = WebUI.getText(findTestObject('Object Repository/Drag_And_Drop_Page/div_DropB'))
 
-'Step 5: '
-'Verify that "JQuery UI" header title is displayed'
-WebUI.verifyTextPresent(("JQuery UI"), false)
+'Assert that the text has swapped, indicating a successful drag-and-drop'
+WebUI.verifyNotEqual(textAfterA, "A", FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyNotEqual(textAfterB, "B", FailureHandling.STOP_ON_FAILURE)
 
-'Step 6: '
-'Back to the previous page'
-WebUI.back()
-
-'Step 7: '
-'Click on the "Enabled" menu item in the JQuery UI menu'
-WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_Enabled'))
-
-'Step 8: '
-'Click on the "Downloads" menu item in the JQuery UI menu'
-WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_Downloads'))
-
-'Step 9: '
-'Click on the "CSV" menu item in the JQuery UI menu'
-WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_CSV'))
-
-'Close Browser'
+'Clean-up steps:'
 WebUI.closeBrowser()
