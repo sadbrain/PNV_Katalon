@@ -16,36 +16,37 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import java.nio.file.Files
+import java.nio.file.Paths
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl(GlobalVariable.URL)
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_JQueryUIMenus'))
 
-// Click 'Horizontal Slider' link
-WebUI.click(findTestObject('Object Repository/Verify_Slider/lnk_HorizontalSlider'))
+// Verify Header Title only once after navigation
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_Menu/lbl_HeaderTitle'), 'JQueryUI - Menu')
 
-// Check header title
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Slider/lbl_HeaderTitle'), 'Horizontal Slider')
+// Interact with Menu
+WebUI.mouseOver(findTestObject('Object Repository/Verify_Menu/lnk_Enabled'))
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_JQueryUIMenu'))
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_Menu'))
 
-// Set Slider to 1
-for (int i = 0; i < 2; i++) { 
-    WebUI.sendKeys(findTestObject('Object Repository/Verify_Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
-}
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Slider/Slider_Value'), '1')
+// Select Downloads -> CSV menu
+WebUI.mouseOver(findTestObject('Object Repository/Verify_Menu/lnk_Enabled'))
+WebUI.mouseOver(findTestObject('Object Repository/Verify_Menu/lnk_Downloads'))
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_CSV'))
 
-//Set Slider to 2.5
-for (int i = 0; i < 3; i++) { 
-    WebUI.sendKeys(findTestObject('Object Repository/Verify_Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
-}
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Slider/Slider_Value'), '2.5')
+// Verify the file is downloaded
+String downloadPath = System.getProperty('user.home') + '/Downloads/menu.csv'
+boolean isFileDownloaded = false
 
-// Set Slider to 4.5
-for (int i = 0; i < 4; i++) { 
-    WebUI.sendKeys(findTestObject('Object Repository/Verify_Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
-}
-WebUI.verifyElementText(findTestObject('Object Repository/Verify_Slider/Slider_Value'), '4.5')
+// Wait longer before checking for the file
+WebUI.delay(5) // Increased wait time
+isFileDownloaded = Files.exists(Paths.get(downloadPath))
 
-WebUI.closeBrowser()
+// Verify the download status
+WebUI.verifyEqual(isFileDownloaded, true)
+
 
 
