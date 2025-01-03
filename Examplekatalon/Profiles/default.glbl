@@ -9,4 +9,9 @@
       <initValue>'https://opensource-demo.orangehrmlive.com/'</initValue>
       <name>URL_ORANGE_DEMO</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://the-internet.herokuapp.com/'</initValue>
+      <name>URL_HEROKU</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
