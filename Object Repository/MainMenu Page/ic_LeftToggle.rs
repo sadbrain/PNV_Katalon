@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_DashboardTitle</name>
+   <name>ic_LeftToggle</name>
    <tag></tag>
-   <elementGuidId>daf9ab58-3ccb-48e1-8bca-1a50dffb7a01</elementGuidId>
+   <elementGuidId>cdce7265-8a3f-432f-b62d-d8a912f9b378</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//button[@role='none']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//h6[normalize-space()='Dashboard']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

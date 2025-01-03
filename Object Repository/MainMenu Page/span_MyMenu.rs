@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_DashboardTitle</name>
+   <name>span_MyMenu</name>
    <tag></tag>
-   <elementGuidId>daf9ab58-3ccb-48e1-8bca-1a50dffb7a01</elementGuidId>
+   <elementGuidId>2c7e2777-0f6c-4b75-820c-15281f8c823d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//h6[normalize-space()='Dashboard']</value>
+         <value>//ul[@class='oxd-main-menu']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

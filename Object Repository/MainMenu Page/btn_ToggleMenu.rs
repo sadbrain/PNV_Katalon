@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_DashboardTitle</name>
+   <name>btn_ToggleMenu</name>
    <tag></tag>
-   <elementGuidId>daf9ab58-3ccb-48e1-8bca-1a50dffb7a01</elementGuidId>
+   <elementGuidId>e5cb4c16-06cc-4cbc-9507-e3921e639ade</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//h6[normalize-space()='Dashboard']</value>
+         <value>//i[@class='oxd-icon bi-chevron-left']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_DashboardTitle</name>
+   <name>lnk_Dashboard</name>
    <tag></tag>
-   <elementGuidId>daf9ab58-3ccb-48e1-8bca-1a50dffb7a01</elementGuidId>
+   <elementGuidId>ab7147fc-43e8-4ff6-8da1-cbc3abc15788</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//h6[normalize-space()='Dashboard']</value>
+         <value>//a[@class='oxd-main-menu-item active']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_DashboardTitle</name>
+   <name>txt_Search</name>
    <tag></tag>
-   <elementGuidId>daf9ab58-3ccb-48e1-8bca-1a50dffb7a01</elementGuidId>
+   <elementGuidId>e7f217c2-7144-445f-963c-79d1222a69bc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//h6[normalize-space()='Dashboard']</value>
+         <value>//input[@placeholder='Search']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
