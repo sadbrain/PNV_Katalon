@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>FileUpload_Page</name>
+   <name>TC010- Verify Key Presses</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>f026616e-01b3-4bd6-ab97-f01285e66e4c</testCaseGuid>
+   <testCaseGuid>eb9ef9c7-2659-40dd-a9d0-674bd5b69c63</testCaseGuid>
 </TestCaseEntity>
