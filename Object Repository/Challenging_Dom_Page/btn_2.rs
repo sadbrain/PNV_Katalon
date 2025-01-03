@@ -7,13 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='87664150-ab3f-013d-1d78-26a532bfca5d']&#xd;
-&#xd;
-</value>
+         <value>//a[@class=&quot;button alert&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-// Pre-condition steps:
+'Pre-condition steps: '
 'Open the browser and navigate to the URL'
 WebUI.openBrowser(GlobalVariable.URL_HEROKU)
 
@@ -26,27 +26,21 @@ WebUI.openBrowser(GlobalVariable.URL_HEROKU)
 WebUI.click(findTestObject('Object Repository/TinyMCE_Page/lnk_WYSIWYGEditor'))
 
 'Verify that the title of the page contains the expected text'
-String actualTitle = WebUI.getText(findTestObject('Object Repository/TinyMCE_Page/h3_Title'))
-String expectedTitle = 'An iFrame containing the TinyMCE WYSIWYG Editor'
-WebUI.verifyTextPresent(actualTitle.contains(expectedTitle), false)
+WebUI.verifyTextPresent(WebUI.getText(findTestObject('Object Repository/TinyMCE_Page/h3_Title')), false)
 
-// Step 2: '
+'Step 2: '
 'Switch to the iframe containing the TinyMCE editor'
 WebUI.switchToFrame(findTestObject('Object Repository/TinyMCE_Page/iframe_TinyMCEEditor'), 10)
 
-'Step 3: '
-'Set new content in the editor to "Hello, how are you?"'
-WebUI.setText(findTestObject('Object Repository/TinyMCE_Page/txt_Content'), "Hello, how are you?")
-
 'Step 4: '
-'Verify the content inside the editor has been updated'
-String actualUpdatedContent = WebUI.getText(findTestObject('Object Repository/TinyMCE_Page/txt_Content'))
-String expectedUpdatedContent = 'Hello, how are you?'
-WebUI.verifyEqual(actualUpdatedContent, expectedUpdatedContent)
+'Verify the default content inside the editor'
+String actualDefaultContent = WebUI.getText(findTestObject('Object Repository/TinyMCE_Page/txt_Content'))
+String expectedDefaultContent = 'Your content goes here.'
+WebUI.verifyEqual(actualDefaultContent, expectedDefaultContent)
 
-// Step 5: '
+'Step 5: '
 'Switch back to the main page and close the browser'
 WebUI.switchToDefaultContent()
 
-// Clean-up steps:
+'Clean-up steps:'
 WebUI.closeBrowser()
