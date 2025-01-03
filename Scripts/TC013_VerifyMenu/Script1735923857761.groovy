@@ -18,21 +18,21 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/jqueryui/menu') 
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_WebElementClickButton'))
+WebUI.verifyTextPresent(("JQueryUI - Menu"), false)
 
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
+WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_Enabled'))
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_JavaScriptClickButton'))
+'Step 4: '
+'Click on the JQuery UI menu'
+WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_JQueryUI'))
+WebUI.verifyTextPresent(("JQuery UI"), false)
+WebUI.back()
 
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.verifyTextPresent('We can use JavaScript code if all else fails!', false)
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_ActionMoveClickButton'))
+WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_Enabled'))
 
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.verifyTextPresent('Advanced user interactions (API) has been developed', false)
-WebUI.verifyTextPresent('Drag & Drop', false)
-WebUI.verifyTextPresent('Hover & Click', false)
-WebUI.verifyTextPresent('Click & Hold....', false)
+WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_Downloads'))
+
+WebUI.click(findTestObject('Object Repository/JQueryUI_Menu_Page/mnu_CSV'))

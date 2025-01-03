@@ -17,22 +17,26 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+String imgPath = "C:\\Users\\Ho Mai Huyen\\Downloads\\cat1.jpg"
+
+'Get file name from path'
+File imgFile = new File(imgPath)
+String imgName = imgFile.getName()
+
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/upload')
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_WebElementClickButton'))
+//WebUI.click(findTestObject('Object Repository/File_Upload_Page/lnk_FileUpload'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_JavaScriptClickButton'))
+String title = WebUI.getText(findTestObject('Object Repository/File_Upload_Page/h3_Title'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyEqual(title, 'File Uploader', FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.verifyTextPresent('We can use JavaScript code if all else fails!', false)
+WebUI.uploadFile(findTestObject('Object Repository/File_Upload_Page/btn_ChooseFile'), imgPath, FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.click(findTestObject('Object Repository/File_Upload_Page/btn_Upload'), FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_ActionMoveClickButton'))
+String uploadedTitle = WebUI.getText(findTestObject('Object Repository/File_Upload_Page/h3_Title'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyEqual(uploadedTitle, 'File Uploaded!', FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.verifyTextPresent('Advanced user interactions (API) has been developed', false)
-WebUI.verifyTextPresent('Drag & Drop', false)
-WebUI.verifyTextPresent('Hover & Click', false)
-WebUI.verifyTextPresent('Click & Hold....', false)
+String displayedFileName = WebUI.getText(findTestObject('Object Repository/File_Upload_Page/img_File'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyEqual(displayedFileName, imgName, FailureHandling.STOP_ON_FAILURE)

@@ -17,22 +17,20 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/key_presses')
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_WebElementClickButton'))
+WebUI.verifyElementText(findTestObject('Object Repository/Key_Presses_Page/h_KeyPressesTitle'), 'Key Presses')
 
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
+WebUI.sendKeys(findTestObject('Object Repository/Key_Presses_Page/frm_KeyPressesForm'), Keys.chord(Keys.TAB))
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_JavaScriptClickButton'))
+WebUI.verifyElementText(findTestObject('Object Repository/Key_Presses_Page/p_KeyPressResult'), 'You entered: TAB')
 
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.verifyTextPresent('We can use JavaScript code if all else fails!', false)
+WebUI.sendKeys(findTestObject('Object Repository/Key_Presses_Page/frm_KeyPressesForm'), Keys.chord(Keys.ENTER))
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_ActionMoveClickButton'))
+WebUI.verifyElementText(findTestObject('Object Repository/Key_Presses_Page/p_KeyPressResult'), 'You entered: ENTER')
 
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.verifyTextPresent('Advanced user interactions (API) has been developed', false)
-WebUI.verifyTextPresent('Drag & Drop', false)
-WebUI.verifyTextPresent('Hover & Click', false)
-WebUI.verifyTextPresent('Click & Hold....', false)
+WebUI.sendKeys(findTestObject('Object Repository/Key_Presses_Page/frm_KeyPressesForm'), Keys.chord("G"))
+
+WebUI.verifyElementText(findTestObject('Object Repository/Key_Presses_Page/p_KeyPressResult'), 'You entered: G')

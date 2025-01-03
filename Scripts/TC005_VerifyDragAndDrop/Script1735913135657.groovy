@@ -16,23 +16,22 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
+import com.kms.katalon.core.webui.driver.DriverFactory
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/drag_and_drop')
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_WebElementClickButton'))
 
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
+WebElement dragElement = WebUI.findWebElement(findTestObject('Object Repository/Drag_And_Drop_Page/div_ColumnA'))
+WebElement dropElement = WebUI.findWebElement(findTestObject('Object Repository/Drag_And_Drop_Page/div_ColumnB'))
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_JavaScriptClickButton'))
+Actions action = new Actions(DriverFactory.getWebDriver())
+action.dragAndDrop(dragElement, dropElement).build().perform()
 
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.verifyTextPresent('We can use JavaScript code if all else fails!', false)
+String textColumnA = WebUI.getText(findTestObject('Object Repository/Drag_And_Drop_Page/div_ColumnA'))
+String textColumnB = WebUI.getText(findTestObject('Object Repository/Drag_And_Drop_Page/div_ColumnB'))
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_ActionMoveClickButton'))
-
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.verifyTextPresent('Advanced user interactions (API) has been developed', false)
-WebUI.verifyTextPresent('Drag & Drop', false)
-WebUI.verifyTextPresent('Hover & Click', false)
-WebUI.verifyTextPresent('Click & Hold....', false)
+WebUI.verifyNotEqual(textColumnA, "A", FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyNotEqual(textColumnB, "B", FailureHandling.STOP_ON_FAILURE)

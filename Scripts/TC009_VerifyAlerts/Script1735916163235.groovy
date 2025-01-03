@@ -18,21 +18,32 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/javascript_alerts')
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_WebElementClickButton'))
 
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
+WebUI.verifyTextPresent(("JavaScript Alerts"), false)
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_JavaScriptClickButton'))
 
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.verifyTextPresent('We can use JavaScript code if all else fails!', false)
+WebUI.click(findTestObject('Object Repository/Javascript_Alerts_Page/btn_ClickForJSAlert'))
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_ActionMoveClickButton'))
+String alertText = WebUI.getAlertText()
+WebUI.verifyMatch(alertText, "I am a JS Alert", false)
 
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.verifyTextPresent('Advanced user interactions (API) has been developed', false)
-WebUI.verifyTextPresent('Drag & Drop', false)
-WebUI.verifyTextPresent('Hover & Click', false)
-WebUI.verifyTextPresent('Click & Hold....', false)
+WebUI.acceptAlert()
+
+WebUI.verifyTextPresent("You successfully clicked an alert", false)
+
+WebUI.click(findTestObject('Object Repository/Javascript_Alerts_Page/btn_JavaScriptConfirm'))
+
+WebUI.dismissAlert()
+
+WebUI.verifyTextPresent("You clicked: Cancel", false)
+
+WebUI.click(findTestObject('Object Repository/Javascript_Alerts_Page/btn_JavaScriptPrompt'))
+
+WebUI.waitForAlert(10)
+
+WebUI.setAlertText("Hello")
+WebUI.acceptAlert()
+
+WebUI.verifyTextPresent("You entered: Hello", false)

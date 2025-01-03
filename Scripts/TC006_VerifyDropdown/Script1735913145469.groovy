@@ -18,21 +18,19 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/dropdown')
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_WebElementClickButton'))
+String title = WebUI.getText(findTestObject('Object Repository/Dropdown_Page/h3_DropListTitle'))
+WebUI.verifyEqual(title, 'Dropdown List', FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 'Option 2', false, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_JavaScriptClickButton'))
+WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 'Option 2', false, 0, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
-WebUI.verifyTextPresent('We can use JavaScript code if all else fails!', false)
+WebUI.selectOptionByIndex(findTestObject('Object Repository/Dropdown_Page/ddl_DropList') , 1, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.click(findTestObject('Object Repository/Click_Me_Page/btn_ActionMoveClickButton'))
+WebUI.verifyOptionSelectedByIndex(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 1, 0, FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
-WebUI.verifyTextPresent('Advanced user interactions (API) has been developed', false)
-WebUI.verifyTextPresent('Drag & Drop', false)
-WebUI.verifyTextPresent('Hover & Click', false)
-WebUI.verifyTextPresent('Click & Hold....', false)
+WebUI.selectOptionByValue(findTestObject('Object Repository/Dropdown_Page/ddl_DropList') , '2', false, FailureHandling.CONTINUE_ON_FAILURE)
+
+WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), '2', false, 0, FailureHandling.CONTINUE_ON_FAILURE)

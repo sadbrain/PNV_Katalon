@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC002 - VerifyClickMe</name>
+   <name>TC009_VerifyAlerts</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>0479d41f-61f9-46d3-8717-bcf4623af9ac</testCaseGuid>
+   <testCaseGuid>a9bc4db8-c29a-4b95-8e88-b2ac3fb82020</testCaseGuid>
 </TestCaseEntity>
