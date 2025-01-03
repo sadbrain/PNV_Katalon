@@ -25,13 +25,16 @@ WebUI.click(findTestObject('Object Repository/KeyPresses_Page/lnk_KeyPress') , F
 WebUI.verifyElementText(findTestObject('Object Repository/KeyPresses_Page/h3_HeaderTitle') , 'Key Presses', FailureHandling.CONTINUE_ON_FAILURE)
 
 // step 2: Presses 'TAB' key
-WebUI.sendKeys(findTestObject('Object Repository/KeyPresses_Page/txt_Target') , Keys.chord(Keys.CONTROL, 't'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.sendKeys(findTestObject('Object Repository/KeyPresses_Page/txt_Target') , Keys.chord(Keys.CONTROL, '\t'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementText( findTestObject('Object Repository/KeyPresses_Page/p_Result'), 'You entered: TAB', FailureHandling.CONTINUE_ON_FAILURE)
 
 // step 3: Presses 'ENTER' key
 WebUI.sendKeys(findTestObject('Object Repository/KeyPresses_Page/txt_Target') ,Keys.chord(Keys.CONTROL, '\n'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementText( findTestObject('Object Repository/KeyPresses_Page/p_Result'), 'You entered: ENTER', FailureHandling.CONTINUE_ON_FAILURE)
 
 // step 4: Presses 'G' key
 WebUI.sendKeys(findTestObject('Object Repository/KeyPresses_Page/txt_Target') ,Keys.chord(Keys.CONTROL, 'G'), FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyElementText( findTestObject('Object Repository/KeyPresses_Page/p_Result'), 'You entered: G', FailureHandling.CONTINUE_ON_FAILURE)
 
 // Close Browser
 WebUI.closeBrowser()

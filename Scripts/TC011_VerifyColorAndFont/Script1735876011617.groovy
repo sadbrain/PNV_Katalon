@@ -17,26 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//def rgbaToHex(String rgba) {
-//	if (rgba.contains("rgba")) {
-//		def rgbValues = rgba.replace("rgba(", "").replace(")", "").split(",")
-//		String red = rgbValues[0].trim()
-//		String green = rgbValues[1].trim()
-//		String blue = rgbValues[2].trim()
-//		
-//		return String.format("#%02X%02X%02X", red.toInteger(), green.toInteger(), blue.toInteger())
-//	} else if (rgba.contains("rgb")) {
-//		def rgbValues = rgba.replace("rgb(", "").replace(")", "").split(",")
-//		String red = rgbValues[0].trim()
-//		String green = rgbValues[1].trim()
-//		String blue = rgbValues[2].trim()
-//		
-//		return String.format("#%02X%02X%02X", red.toInteger(), green.toInteger(), blue.toInteger())
-//	} else {
-//		throw new IllegalArgumentException("Invalid color format: " + rgba)
-//	}
-//}
-
 // step 1: Go to https://the-internet.herokuapp.com/ and Select 'Challenging DOM' link
 WebUI.openBrowser(GlobalVariable.URL_HERROKUAPP, FailureHandling.CONTINUE_ON_FAILURE)
 WebUI.click(findTestObject('Object Repository/ChallengingDom_Page/lnk_ChallengingDOM') , FailureHandling.CONTINUE_ON_FAILURE)
@@ -49,14 +29,11 @@ WebUI.verifyMatch(WebUI.getCSSValue(findTestObject('Object Repository/Challengin
 
 // step 3: Verify background-color of button 2:Background-color is #c60f13 (hex) color
 String buttonColor = WebUI.getCSSValue(findTestObject('Object Repository/ChallengingDom_Page/btn_2'), 'background-color')
-//String hexColor = rgbaToHex(buttonColor)
-//WebUI.verifyMatch(hexColor, '#C60F13', false)
 WebUI.verifyMatch(buttonColor, '#C60F13', false)
 
 // step 4: Verify border-color of button 3: Border-color is #457a1a (hex) color
 String buttonBorderColor = WebUI.getCSSValue(findTestObject('Object Repository/ChallengingDom_Page/btn_3'), 'border-color')
-//String hexBorderColor = rgbaToHex(buttonBorderColor)
-//WebUI.verifyMatch(hexBorderColor, '#457A1A', false)
+WebUI.verifyMatch(buttonBorderColor, '#457A1A', false)
 
 // close browser
 WebUI.closeBrowser()
