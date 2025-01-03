@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Your content goes here</name>
+   <name>iframe_TinyMCEEditor</name>
    <tag></tag>
-   <elementGuidId>b8059df4-7fe9-4bd5-8233-d0063ad69b58</elementGuidId>
+   <elementGuidId>f78aa08a-086b-4433-a1d7-0c49de55c1ef</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//body[@id = 'tinymce']/p</value>
+         <value>//*[@id=&amp;quot;mce_0_ifr&amp;quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

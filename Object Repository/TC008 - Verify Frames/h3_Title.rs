@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Your content goes here</name>
+   <name>h3_Title</name>
    <tag></tag>
-   <elementGuidId>b8059df4-7fe9-4bd5-8233-d0063ad69b58</elementGuidId>
+   <elementGuidId>913eafbf-3250-4009-aaf6-a79d259fcf3b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//body[@id = 'tinymce']/p</value>
+         <value>//h3[normalize-space()='An iFrame containing the TinyMCE WYSIWYG Editor']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

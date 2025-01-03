@@ -17,25 +17,3 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-'Step 1'
-'Open the browser and navigate to the URL'
-WebUI.openBrowser('')
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
-WebUI.navigateToUrl('https://the-internet.herokuapp.com/frames')
-
-'Step 2'
-
-'Retrieve and verify the header text'
-String actualHeaderText = WebUI.getText(findTestObject('Object Repository/Editor_Page/h3_HeaderTitle'))
-WebUI.comment('Actual Header Text: ' + actualHeaderText)
-WebUI.verifyMatch(actualHeaderText.trim(), 'An iFrame containing the TinyMCE WYSIWYG Editor', false)
-'Step 3: '
-'Verify the default content inside the editor'
-String actualDefaultContent = WebUI.getText(findTestObject('Object Repository/TC008 - Verify Frames/txt_Your content goes here'))
-String expectedDefaultContent = 'Your content goes here.'
-WebUI.verifyEqual(actualDefaultContent, expectedDefaultContent)
-'Step 4: '
-'Switch back to the main page and close the browser'
-WebUI.switchToDefaultContent()
-
-WebUI.closeBrowser()
