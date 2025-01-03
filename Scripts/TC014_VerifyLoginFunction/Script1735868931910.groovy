@@ -23,7 +23,7 @@ WebUI.openBrowser(GlobalVariable.URL_ORANGE_DEMO)
 'Step 2: Get username text from the Login form'
 String usernameText = WebUI.getText(findTestObject('Object Repository/Login_Page/lbl_Username'))
 
-'Step 4: Enter "Admin" into the Username textbox'
+'Step 4: Enter username into the textbox'
 WebUI.setText(findTestObject('Object Repository/Login_Page/txt_Username'), GlobalVariable.USER_NAME)
 
 'Step 5: Verify the username is entered successfully'
@@ -33,7 +33,7 @@ WebUI.verifyMatch(enteredUsername, GlobalVariable.USER_NAME, false)
 'Step 6: Get password text from the Login form'
 String passwordText = WebUI.getText(findTestObject('Object Repository/Login_Page/lbl_Password'))
 
-'Step 7: Enter "admin123" into the password textbox'
+'Step 7: Enter the password into the textbox'
 WebUI.setText(findTestObject('Object Repository/Login_Page/txt_Password'),  GlobalVariable.PASSWORD)
 
 'Step 8: Verify the password is entered successfully'
