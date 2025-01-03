@@ -19,4 +19,9 @@
       <initValue>'https://the-internet.herokuapp.com/'</initValue>
       <name>MENU_URL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</initValue>
+      <name>LOGIN_URL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
