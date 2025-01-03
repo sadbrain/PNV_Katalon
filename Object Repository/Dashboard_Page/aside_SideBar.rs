@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>aside_SideBar</name>
+   <tag></tag>
+   <elementGuidId>19351698-4c04-467f-81fa-16f0f80da310</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//aside</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

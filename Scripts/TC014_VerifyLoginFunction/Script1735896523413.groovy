@@ -17,7 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-
 WebUI.openBrowser(GlobalVariable.LOGIN_URL)
 
 // Step 1 : Get username text from Login form to enter into Username textbox
@@ -31,8 +30,6 @@ String password = WebUI.getText(findTestObject('Object Repository/Login_Page/lbl
 String passwordSplit = password.split(":")[1].trim()
 WebUI.verifyEqual(passwordSplit, "admin123")
 WebUI.setText( findTestObject('Object Repository/Login_Page/txt_Password'), passwordSplit)
-
-WebUI.delay(2)
 
 // Step 3 : Click Login button
 WebUI.click(findTestObject('Object Repository/Login_Page/btn_Submit'))

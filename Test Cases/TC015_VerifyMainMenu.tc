@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC015_VerifyMainMenu</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>870245ef-78fd-466e-8a75-06bd8e0f887a</testCaseGuid>
+</TestCaseEntity>
