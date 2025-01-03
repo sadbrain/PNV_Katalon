@@ -20,10 +20,8 @@ import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import org.openqa.selenium.Keys as Keys
 
-// Bước 1: Mở trình duyệt và truy cập trang web
 WebUI.openBrowser('https://the-internet.herokuapp.com/')
 
-// Bước 2: Nhấp vào liên kết "Verify Presses"
 WebUI.click(findTestObject('Object Repository/Page_VerifyKeyPresses/lnk_KeyPress'))
 
 // Presses TAB
@@ -35,9 +33,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Page_VerifyKeyPresses/txt_Field
 WebUI.sendKeys(findTestObject('Object Repository/Page_VerifyKeyPresses/txt_Field'), 'G')
 WebUI.verifyTextPresent('You entered: G', false)
 
-// Bước 6: Kiểm tra thông báo hiển thị
 String message = WebUI.getText(findTestObject('Object Repository/Page_VerifyKeyPresses/Message_Notification'))
 WebUI.verifyMatch(message, 'You entered: G', false)
 
-// Đóng trình duyệt
 WebUI.closeBrowser()
