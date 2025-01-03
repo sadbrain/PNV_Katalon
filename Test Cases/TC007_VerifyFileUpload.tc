@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC007_VerifyFileUpload</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>aab72a32-c6b7-42a4-af61-e682ee3980e8</testCaseGuid>
+</TestCaseEntity>
