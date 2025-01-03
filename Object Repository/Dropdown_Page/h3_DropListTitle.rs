@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_ChooseFile</name>
+   <name>h3_DropListTitle</name>
    <tag></tag>
-   <elementGuidId>592c9638-9b8d-4d0e-9963-383aadbf7324</elementGuidId>
+   <elementGuidId>0ebac703-cae4-4d2f-95b7-ad9c3ceef795</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id='file-upload']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//h3[normalize-space()='Dropdown List']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

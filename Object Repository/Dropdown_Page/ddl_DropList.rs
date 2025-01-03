@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>h3_Title</name>
+   <name>ddl_DropList</name>
    <tag></tag>
-   <elementGuidId>49dcb99e-8ef2-48a0-aba1-e323cb5ab0bf</elementGuidId>
+   <elementGuidId>ba643735-62e0-45c2-99d3-db0a57fa615f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//select[@id='dropdown']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@class='example']/ h3</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

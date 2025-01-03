@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lnk_FileUpload</name>
+   <name>lnk_Dropdown</name>
    <tag></tag>
-   <elementGuidId>8ab9b1a3-3073-494a-9594-24d8ab0ccac8</elementGuidId>
+   <elementGuidId>2f4c9b1a-4a4a-4ddb-83d8-b6a3de52082f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//a[normalize-space()='File Upload']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//a[normalize-space()='Dropdown']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

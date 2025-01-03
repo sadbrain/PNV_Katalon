@@ -21,32 +21,31 @@ import org.openqa.selenium.Keys as Keys
 'Open the browser and navigate to the URL'
 WebUI.openBrowser(GlobalVariable.URL_HEROKU)
 
-String imgPath = "C:\\Users\\Admin\\Pictures\\Screenshots\\Faker&T1.png"
+'step 1: '
+'Click Dropdown link'
+WebUI.click(findTestObject('Object Repository/Heroku_Page/lnk_Dropdown'))
 
-File imgFile = new File(imgPath)
-String imgName = imgFile.getName()
+'Verify Dropdown List header title is displayed'
+String title = WebUI.getText(findTestObject('Object Repository/Dropdown_Page/h3_DropListTitle'))
+WebUI.verifyEqual(title, 'Dropdown List', FailureHandling.CONTINUE_ON_FAILURE)
 
-'Step 2: '
-'Select File Upload link'
-WebUI.click(findTestObject('Object Repository/Heroku_Page/lnk_FileUpload'), FailureHandling.CONTINUE_ON_FAILURE)
+'step 2: '
+'Select item by label'
+WebUI.selectOptionByLabel( findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 'Option 2', false, FailureHandling.CONTINUE_ON_FAILURE)
+'Verifying the Option is Selected by Label option: Option 2'
+WebUI.verifyOptionSelectedByLabel(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 'Option 2', false, 0, FailureHandling.CONTINUE_ON_FAILURE)
 
-'Verify File Uploader header title is displayed'
-String title = WebUI.getText(findTestObject('Object Repository/FileUpload_Page/h3_Title'), FailureHandling.CONTINUE_ON_FAILURE)
-WebUI.verifyEqual(title, 'File Uploader', FailureHandling.CONTINUE_ON_FAILURE)
+'step 3: '
+'Select item by index 1'
+WebUI.selectOptionByIndex(findTestObject('Object Repository/Dropdown_Page/ddl_DropList') , 1, FailureHandling.CONTINUE_ON_FAILURE)
+'Verifying the Option is Selected by Index option: 1'
+WebUI.verifyOptionSelectedByIndex(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), 1, 0, FailureHandling.CONTINUE_ON_FAILURE)
 
-'Step 3: '
-'Click on Choose File button and upload a PNG file, then click Upload button'
-WebUI.uploadFile(findTestObject('Object Repository/FileUpload_Page/btn_ChooseFile'), imgPath, FailureHandling.CONTINUE_ON_FAILURE)
-WebUI.click(findTestObject('Object Repository/FileUpload_Page/btn_Upload'), FailureHandling.CONTINUE_ON_FAILURE)
-
-'Step 4: '
-'Verify the h3 header changes after upload'
-String uploadedTitle = WebUI.getText(findTestObject('Object Repository/FileUpload_Page/h3_Title'), FailureHandling.CONTINUE_ON_FAILURE)
-WebUI.verifyEqual(uploadedTitle, 'File Uploaded!', FailureHandling.CONTINUE_ON_FAILURE)
-
-'verify name file after uploading'
-String displayedFileName = WebUI.getText(findTestObject('Object Repository/FileUpload_Page/img_File'), FailureHandling.CONTINUE_ON_FAILURE)
-WebUI.verifyEqual(displayedFileName, imgName, FailureHandling.STOP_ON_FAILURE)
+'step 4: '
+' Select item by value 2'
+WebUI.selectOptionByValue(findTestObject('Object Repository/Dropdown_Page/ddl_DropList') , '2', false, FailureHandling.CONTINUE_ON_FAILURE)
+'verify the Option is select by Value : Option 2'
+WebUI.verifyOptionSelectedByValue(findTestObject('Object Repository/Dropdown_Page/ddl_DropList'), '2', false, 0, FailureHandling.CONTINUE_ON_FAILURE)
 
 'Clean-up steps:'
 WebUI.closeBrowser()
