@@ -20,25 +20,28 @@ import org.openqa.selenium.Keys as Keys
 WebUI.openBrowser('')
 WebUI.navigateToUrl(GlobalVariable.HEROKUAPP)
 
-//Step 1: Open Horizontal Slider
-WebUI.click(findTestObject('Object Repository/Verify_Slider/lnk_HorizontalSlider'))
+//Step 1: Open Horizontal Slider and Verify Header
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_JQueryUIMenus'))
+WebUI.verifyEqual(WebUI.getText(findTestObject('Object Repository/Verify_Menu/hdr_JQueryUIMenus')),'JQueryUI - Menu')
 
-//Step 2: Verify Header
-WebUI.verifyEqual(WebUI.getText(findTestObject('Object Repository/Verify_Slider/hdr_HorizontalSlider')),'Horizontal Slider')
+//Step 2: Choose Submenu and Verify
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_Enabled'))
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_SubMenuQueryMenu'))
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_Menu/hdr_JQueryUI'), 'JQuery UI')
 
-// Step 3 : Set Slider to 1 and verify
-String script1 = "document.querySelector('input[type=range]').value = '1'; document.querySelector('input[type=range]').dispatchEvent(new Event('change'));"
-WebUI.executeJavaScript(script1, null)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Verify_Slider/txt_result') ), '1', false)
+//Step 3: Back Menu and Verify
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_Menu'))
+WebUI.verifyEqual(WebUI.getText(findTestObject('Object Repository/Verify_Menu/hdr_JQueryUIMenus')),'JQueryUI - Menu')
 
-// Step 4 : Set Slider to 2.5 and verify
-String script2 = "document.querySelector('input[type=range]').value = '2.5'; document.querySelector('input[type=range]').dispatchEvent(new Event('change'));"
-WebUI.executeJavaScript(script2, null)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Verify_Slider/txt_result')), '2.5', false)
+//Step 4:
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_Enabled'))
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_SubMenuDownloads'))
+WebUI.click(findTestObject('Object Repository/Verify_Menu/lnk_SubMenuCSV'))
 
-// Step 5 : Set Slider to 4.5 and verify
-String script3 = "document.querySelector('input[type=range]').value = '4.5'; document.querySelector('input[type=range]').dispatchEvent(new Event('change'));"
-WebUI.executeJavaScript(script3, null)
-WebUI.verifyMatch(WebUI.getText(findTestObject('Object Repository/Verify_Slider/txt_result')), '4.5', false)
+// Step 8: Kiểm tra file CSV được tải xuống
+String downloadPath = 'C:\\Users\\lenovo\\Downloads\\'
+String fileName = 'menu.csv'
+File csvFile = new File(downloadPath + fileName)
+assert csvFile.exists() == true : "File CSV không được tải xuống thành công"
 
 WebUI.closeBrowser()

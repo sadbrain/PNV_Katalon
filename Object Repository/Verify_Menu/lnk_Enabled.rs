@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Range</name>
+   <name>lnk_Enabled</name>
    <tag></tag>
-   <elementGuidId>b8f45756-a5c3-4016-8c8b-baa6178e4106</elementGuidId>
+   <elementGuidId>44ed2463-0778-43b8-9add-ebdd2accf92f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;content&quot;]/div/div/input</value>
+         <value>//*[@id=&quot;ui-id-3&quot;]/a</value>
       </entry>
       <entry>
          <key>BASIC</key>
