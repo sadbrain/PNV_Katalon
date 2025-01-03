@@ -28,17 +28,37 @@ String passwordText = WebUI.getText(findTestObject('Object Repository/Verify_Log
 WebUI.setText(findTestObject('Object Repository/Verify_LoginFunction/txt_Username'), usernameText)
 WebUI.setText(findTestObject('Object Repository/Verify_LoginFunction/txt_Password'), passwordText)
 
-// Step 3: Click on the Login button
+// Step 3: Verify the input values
+// Check if the inputted value is equal to the username text
+WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Verify_LoginFunction/txt_Username'), 'value'), usernameText, false)
+// Check if the inputted value is equal to the password text
+WebUI.verifyMatch(WebUI.getAttribute(findTestObject('Object Repository/Verify_LoginFunction/txt_Password'), 'value'), passwordText, false)
+
+// Step 4: Click on the Login button
 WebUI.click(findTestObject('Object Repository/Verify_LoginFunction/btn_Login'))
 
-// Step 4: Verify The Dashboard page is loaded successfully
+// Step 5: Verify The Dashboard page is loaded successfully
 WebUI.verifyElementPresent(findTestObject('Object Repository/Verify_LoginFunction/hdr_Dashboard'), 10)
 
-// Step 5: Logout 
+// Step 6: Verify page title and user control displayed
+// Check if the page title is correct (assuming you want to verify the title)
+WebUI.verifyEqual(WebUI.getText(findTestObject('Object Repository/Verify_LoginFunction/hdr_Dashboard')), "Dashboard")
+
+//WebUI.verifyEqual(WebUI.getTitle(), "Dashboard")
+// Check if the user control is displayed
+WebUI.verifyElementPresent(findTestObject('Object Repository/Verify_LoginFunction/btn_userControl'), 10)
+
+// Step 7: Logout 
 WebUI.click(findTestObject('Object Repository/Verify_LoginFunction/btn_Profile'))
 WebUI.click(findTestObject('Object Repository/Verify_LoginFunction/lnk_Logout'))
 
-// Step 6: Verify Logout successfully
+// Step 8: Verify Logout successfully
+WebUI.verifyElementPresent(findTestObject('Object Repository/Verify_LoginFunction/txt_Username'), 10)
+
+// Step 9: Verify that the user control is disappeared and the Login form is displayed
+// Check if the user control is no longer present
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Verify_LoginFunction/btn_userControl'), 10)
+// Check if the login form is displayed
 WebUI.verifyElementPresent(findTestObject('Object Repository/Verify_LoginFunction/txt_Username'), 10)
 
 WebUI.closeBrowser()
