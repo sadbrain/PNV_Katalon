@@ -24,4 +24,19 @@
       <initValue>'https://the-internet.herokuapp.com/'</initValue>
       <name>URL_HEROKU</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://opensource-demo.orangehrmlive.com/'</initValue>
+      <name>URL_ORANGE_DEMO</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Admin'</initValue>
+      <name>USER_NAME</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'admin123'</initValue>
+      <name>PASSWORD</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
