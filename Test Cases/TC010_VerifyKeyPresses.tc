@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC010_VerifyKeyPresses</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d85ceb8d-1123-4677-9f5c-661e82e26b92</testCaseGuid>
+</TestCaseEntity>
