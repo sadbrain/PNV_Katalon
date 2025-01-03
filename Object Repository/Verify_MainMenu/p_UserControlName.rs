@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Username</name>
+   <name>p_UserControlName</name>
    <tag></tag>
-   <elementGuidId>03dcef8a-fff4-4650-8255-c58e02bfbc87</elementGuidId>
+   <elementGuidId>82cc08e0-905c-464d-86e0-ea56219a429b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Username']</value>
+         <value>//p[@class='oxd-userdropdown-name']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -18,27 +18,24 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser(GlobalVariable.URL)
-
-// Bước 1: Nhấn vào liên kết
+// Step 1: Click link
 WebUI.click(findTestObject('Object Repository/Verify_Frames/lnk_WYSIWYGEditor'))
 
-// Kiểm tra rằng tiêu đề của trang chứa văn bản mong đợi
+// Check header title
 String actualTitle = WebUI.getText(findTestObject('Object Repository/Verify_Frames/lbl_Title'))
 String expectedTitle = 'An iFrame containing the TinyMCE WYSIWYG Editor'
 WebUI.verifyEqual(actualTitle.contains(expectedTitle), true)
-
-// Bước 2: Chuyển đến iframe chứa trình chỉnh sửa TinyMCE
-// Thay đổi đường dẫn đến iframe
+// Step 2: Switch to the iframe containing the TinyMCE editor
 WebUI.switchToFrame(findTestObject('Object Repository/Verify_Frames/fra_TinyMCE'), 10)
 
-// Bước 3: Đặt nội dung mới trong trình chỉnh sửa
+// Step 3: Set new content in the editor
 WebUI.setText(findTestObject('Object Repository/Verify_Frames/txt_TinyMCE'), "Hello, how are you?")
 
-// Bước 4: Kiểm tra nội dung bên trong trình chỉnh sửa đã được cập nhật
+// Step 4: Verify the content inside the editor has been updated
 String actualUpdatedContent = WebUI.getText(findTestObject('Object Repository/Verify_Frames/txt_TinyMCE'))
 String expectedUpdatedContent = 'Hello, how are you?'
 WebUI.verifyEqual(actualUpdatedContent, expectedUpdatedContent)
 
-// Bước 5: Chuyển trở lại trang chính và đóng trình duyệt
+// Step 5: Switch back to the main page and close the browser
 WebUI.switchToDefaultContent()
 WebUI.closeBrowser()

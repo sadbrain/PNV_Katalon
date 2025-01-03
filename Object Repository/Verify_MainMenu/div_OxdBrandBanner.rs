@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Username</name>
+   <name>div_OxdBrandBanner</name>
    <tag></tag>
-   <elementGuidId>03dcef8a-fff4-4650-8255-c58e02bfbc87</elementGuidId>
+   <elementGuidId>a9f7b3b8-9c83-4734-bfd8-9a86ee70f63b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Username']</value>
+         <value>//div[@class='oxd-sidepanel-body']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

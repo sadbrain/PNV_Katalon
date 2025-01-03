@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Username</name>
+   <name>i_ToggleIconRight</name>
    <tag></tag>
-   <elementGuidId>03dcef8a-fff4-4650-8255-c58e02bfbc87</elementGuidId>
+   <elementGuidId>c2247b2f-0b19-4e83-95d1-979d87c516ab</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Username']</value>
+         <value>//i[@class='oxd-icon bi-chevron-right']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

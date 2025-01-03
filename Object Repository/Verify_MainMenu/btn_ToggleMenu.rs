@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Username</name>
+   <name>btn_ToggleMenu</name>
    <tag></tag>
-   <elementGuidId>03dcef8a-fff4-4650-8255-c58e02bfbc87</elementGuidId>
+   <elementGuidId>9a89f23d-d04d-46d4-8f7b-1d2083ce9245</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Username']</value>
+         <value>//button[@role='none']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

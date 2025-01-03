@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txt_Username</name>
+   <name>lnk_Dashboard</name>
    <tag></tag>
-   <elementGuidId>03dcef8a-fff4-4650-8255-c58e02bfbc87</elementGuidId>
+   <elementGuidId>84eae1c8-b556-4f86-b4f4-23ba46849503</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@placeholder='Username']</value>
+         <value>//span[text()=&amp;quot;Dashboard&amp;quot;]/parent::a</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
