@@ -9,4 +9,9 @@
       <initValue>'https://webdriveruniversity.com/Contact-Us/contactus.html'</initValue>
       <name>CONTACT_URL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://webdriveruniversity.com/Click-Buttons/index.html'</initValue>
+      <name>CLICKBUTTON_URL</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
