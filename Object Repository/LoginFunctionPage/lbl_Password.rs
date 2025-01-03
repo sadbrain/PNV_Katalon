@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lnk_UsernameControl</name>
+   <name>lbl_Password</name>
    <tag></tag>
-   <elementGuidId>323a69a9-4f46-46b8-b9f8-7ced43868efd</elementGuidId>
+   <elementGuidId>86c5261e-96aa-4ce0-9f02-5da53e41ff95</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='oxd-userdropdown-tab']</value>
+         <value>//label[normalize-space()='Password']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

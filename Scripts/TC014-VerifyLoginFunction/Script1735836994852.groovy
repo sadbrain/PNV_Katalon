@@ -20,16 +20,34 @@ import org.openqa.selenium.Keys as Keys
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 
-WebUI.setText(findTestObject('Object Repository/LoginFunctionPage/txt_UsernameInput'), 'Admin')
+String usernameText = WebUI.getText(findTestObject('Object Repository/LoginFunctionPage/lbl_Username'))
 
-WebUI.setEncryptedText(findTestObject('Object Repository/LoginFunctionPage/txt_PasswordInput'), 'hUKwJTbofgPU9eVlw/CnDQ==')
+WebUI.setText(findTestObject('Object Repository/LoginFunctionPage/txt_UsernameInput'), GlobalVariable.USER_NAME)
+
+String enteredUsername = WebUI.getAttribute(findTestObject('Object Repository/LoginFunctionPage/txt_UsernameInput'), 'value')
+WebUI.verifyMatch(enteredUsername, GlobalVariable.USER_NAME, false)
+
+String passwordText = WebUI.getText(findTestObject('Object Repository/LoginFunctionPage/lbl_Password'))
+
+WebUI.setText(findTestObject('Object Repository/LoginFunctionPage/txt_PasswordInput'), GlobalVariable.PASSWORD)
+
+String enteredPassword = WebUI.getAttribute(findTestObject('Object Repository/LoginFunctionPage/txt_PasswordInput'), 'value')
+WebUI.verifyMatch(enteredPassword, GlobalVariable.PASSWORD, false)
 
 WebUI.click(findTestObject('Object Repository/LoginFunctionPage/btn_Login'))
 
-WebUI.verifyElementPresent(findTestObject('Object Repository/LoginFunctionPage/txt_DashboardTitle'), 10)
+WebUI.waitForPageLoad(10)
 
-WebUI.click(findTestObject('Object Repository/LoginFunctionPage/lnk_UsernameControl'))
+String expectedTitle = "Dashboard"
+String dashboardText = WebUI.getText(findTestObject('Object Repository/LoginFunctionPage/txt_DashboardTitle'))
+WebUI.verifyMatch(dashboardText, expectedTitle, false)
 
+WebUI.verifyElementPresent(findTestObject('Object Repository/LoginFunctionPage/lnk_UsernameControl'), 10)
+
+WebUI.click(findTestObject('Object Repository/LoginFunctionPage/p_UserControlName'))
 WebUI.click(findTestObject('Object Repository/LoginFunctionPage/lnk_Logout'))
 
-WebUI.verifyElementPresent(findTestObject('Object Repository/LoginFunctionPage/txt_UsernameInput'), 10)
+WebUI.verifyElementPresent(findTestObject('Object Repository/LoginFunctionPage/p_LoginTitle'), 10)
+
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/LoginFunctionPage/lnk_UsernameControl'), 10)
+

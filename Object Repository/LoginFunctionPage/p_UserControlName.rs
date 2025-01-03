@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lnk_UsernameControl</name>
+   <name>p_UserControlName</name>
    <tag></tag>
-   <elementGuidId>323a69a9-4f46-46b8-b9f8-7ced43868efd</elementGuidId>
+   <elementGuidId>048678d0-9e73-40c1-a8fd-bfd719dd26e1</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[@class='oxd-userdropdown-tab']</value>
+         <value>//p[@class='oxd-userdropdown-name']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
