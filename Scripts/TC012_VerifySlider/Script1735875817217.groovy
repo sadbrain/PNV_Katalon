@@ -16,32 +16,37 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.webui.driver.DriverFactory
 
 WebUI.openBrowser('')
-WebUI.navigateToUrl(GlobalVariable.URL)
+WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 
-// Click 'Key Presses'
-WebUI.click(findTestObject('Object Repository/Verify_KeyPresses/lnk_KeyPress'))
+// Click 'Horizontal Slider' link
+WebUI.click(findTestObject('Object Repository/Verify_Slider/lnk_HorizontalSlider'))
 
-// Verify header title
-String pageTitle = WebUI.getText(findTestObject('Object Repository/Verify_KeyPresses/lbl_HeaderKeyPress'))
-assert pageTitle == 'Key Presses' : "Page title is incorrect" 
+// Check header title
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_Slider/lbl_HeaderTitle'), 'Horizontal Slider')
 
-// Presses TAB
-WebUI.sendKeys(findTestObject('Object Repository/Verify_KeyPresses/txt_KeyPressTarget'), Keys.chord(Keys.TAB))
-WebUI.verifyTextPresent('You entered: TAB', false)
+// Set Slider to 1
+for (int i = 0; i < 2; i++) { 
+    WebUI.sendKeys(findTestObject('Object Repository/Verify_Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
+}
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_Slider/Slider_Value'), '1')
 
-// Presses ENTER
-WebUI.sendKeys(findTestObject('Object Repository/Verify_KeyPresses/txt_KeyPressTarget'), Keys.chord(Keys.ENTER))
-WebUI.verifyTextPresent('You entered: ENTER', false)
+//Set Slider to 2.5
+for (int i = 0; i < 3; i++) { 
+    WebUI.sendKeys(findTestObject('Object Repository/Verify_Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
+}
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_Slider/Slider_Value'), '2.5')
 
-// Presses G
-WebUI.sendKeys(findTestObject('Object Repository/Verify_KeyPresses/txt_KeyPressTarget'), 'G')
-WebUI.verifyTextPresent('You entered: G', false)
+// Set Slider to 4.5
+for (int i = 0; i < 4; i++) { 
+    WebUI.sendKeys(findTestObject('Object Repository/Verify_Slider/Slider_Input'), Keys.chord(Keys.ARROW_RIGHT))
+}
+WebUI.verifyElementText(findTestObject('Object Repository/Verify_Slider/Slider_Value'), '4.5')
+
 
 WebUI.closeBrowser()
-
 
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC012_VerifySlider</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0a0b236a-78df-4fbe-a1cd-50749fdc7e7b</testCaseGuid>
+</TestCaseEntity>
