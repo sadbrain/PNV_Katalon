@@ -4,7 +4,17 @@
    <name>btn_CloseJavaScript</name>
    <tag></tag>
    <elementGuidId>ba09ffd7-3494-4f8c-aae0-b40975340793</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='myModalJSClick']//button[contains(text(),'Close')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

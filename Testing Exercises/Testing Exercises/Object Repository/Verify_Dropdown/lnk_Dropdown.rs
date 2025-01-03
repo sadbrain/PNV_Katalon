@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_CloseWebElement</name>
+   <name>lnk_Dropdown</name>
    <tag></tag>
-   <elementGuidId>e93ce76c-705a-420e-8e2f-37dbdc01c8d5</elementGuidId>
+   <elementGuidId>0fa5bb0d-2963-432a-a2e0-628328b87951</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='myModalClick']//button[contains(text(),'Close')]</value>
+         <value>//a[normalize-space()='Dropdown']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

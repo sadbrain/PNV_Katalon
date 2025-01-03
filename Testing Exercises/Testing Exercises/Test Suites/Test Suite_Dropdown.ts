@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Test Suite_Click Me</name>
+   <name>Test Suite_Dropdown</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,12 +10,12 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>true</rerunImmediately>
-   <testSuiteGuid>4920b6e3-7b69-43d2-88d7-862a5ab95b52</testSuiteGuid>
+   <testSuiteGuid>b76e7619-7d7c-456c-91ee-1dd8c66c079a</testSuiteGuid>
    <testCaseLink>
-      <guid>79ec6b40-6cc5-4575-9c25-de760803cea5</guid>
+      <guid>9250f416-a445-4d65-8ea1-75ef602df971</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TC002 - Verify Click Me</testCaseId>
+      <testCaseId>Test Cases/TC006 - Verify Dropdown</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

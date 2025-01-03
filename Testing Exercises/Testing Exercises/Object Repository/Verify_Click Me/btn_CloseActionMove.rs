@@ -4,7 +4,17 @@
    <name>btn_CloseActionMove</name>
    <tag></tag>
    <elementGuidId>e806f06f-541c-4027-bdfa-1b4af2b499df</elementGuidId>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='myModalMoveClick']//button[contains(text(),'Close')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

@@ -17,3 +17,21 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+WebUI.navigateToUrl('http://webdriveruniversity.com/Click-Buttons/index.html')
+
+//Verify WebElement Click section
+WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_WebElementClick'))
+WebUI.verifyTextPresent('Well done for successfully using the click() method!', false)
+WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_CloseWebElement'))
+
+//Verify JavaScript Click section
+WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_JavaScriptClick'))
+WebUI.verifyTextPresent('It’s that Easy!! Well I think it is.....', false)
+WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_CloseJavaScript'))
+
+
+//Verify Action Move & Click section
+WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_ActionMoveClick'))
+WebUI.verifyTextPresent('Well done! the Action Move & Click can become very useful!', false)
+WebUI.click(findTestObject('Object Repository/Verify_Click Me/btn_CloseActionMove'))
