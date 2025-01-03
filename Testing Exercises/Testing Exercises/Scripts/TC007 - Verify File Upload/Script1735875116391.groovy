@@ -21,8 +21,7 @@ String imgPath = "C:\\Users\\XUOM\\Testing Exercises\\userstory.jpg"
 
 // Lấy tên tệp từ đường dẫn
 File imgFile = new File(imgPath)
-String imgName = imgFile.getName() // Tên file: userstory.jpg
-
+String imgName = imgFile.getName() // Tên file
 // Step 1: Open the browser and navigate to the URL
 WebUI.openBrowser(GlobalVariable.URL_HERROKUAPP)
 
