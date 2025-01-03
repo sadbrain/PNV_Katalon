@@ -17,6 +17,8 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+
+// Function to convert rgba color code to Hex
 def rgbaToHex(String rgba) {
 	if (rgba.contains("rgba")) {
 		def rgbValues = rgba.replace("rgba(", "").replace(")", "").split(",")
