@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lb_FileUpload</name>
+   <name>lnk_JavaScriptAlerts</name>
    <tag></tag>
-   <elementGuidId>ee9111ba-ee5d-411d-a997-aef3c479f3e6</elementGuidId>
+   <elementGuidId>262478b1-cac1-4720-8566-f68e6d8b3e4d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[normalize-space()='File Upload']</value>
+         <value>//a[normalize-space()='JavaScript Alerts']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>lb_Dropdown</name>
+   <name>btn_JSAlert</name>
    <tag></tag>
-   <elementGuidId>c799b9dd-3e84-4f5e-9842-7ce504f108f7</elementGuidId>
+   <elementGuidId>550f8023-3629-4fc5-ba19-1e801ed3ab38</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[normalize-space()='Dropdown']</value>
+         <value>//button[normalize-space()='Click for JS Alert']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

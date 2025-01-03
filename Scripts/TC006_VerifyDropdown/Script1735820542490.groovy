@@ -24,7 +24,7 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://the-internet.herokuapp.com/')
 
-WebUI.click(findTestObject('Object Repository/Verify_Dropdown/lb_Dropdown'))
+WebUI.click(findTestObject('Object Repository/Verify_Dropdown/lnk_Dropdown'))
 
 WebUI.verifyElementText(findTestObject('Object Repository/Verify_Dropdown/lbl_DropdownHeader'), 'Dropdown List')
 

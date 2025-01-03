@@ -16,25 +16,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.support.ui.Select
 
 
 WebUI.openBrowser('')
-
-
 WebUI.navigateToUrl(GlobalVariable.URL)
-
-
-WebUI.click(findTestObject('Object Repository/Verify_FileUpload/lb_FileUpload'))
-
+WebUI.click(findTestObject('Object Repository/Verify_FileUpload/lnk_FileUpload'))
 WebUI.verifyElementText(findTestObject('Object Repository/Verify_FileUpload/lbl_FileUploaderHeader'), 'File Uploader')
-
 String filePath = "C:\\Users\\DELL\\Pictures\\Screenshots\\map.png";
-
 WebUI.uploadFile(findTestObject('Object Repository/Verify_FileUpload/btn_ChooseFile'), filePath)
-
 WebUI.click(findTestObject('Object Repository/Verify_FileUpload/btn_Upload'))
-
 WebUI.verifyElementText(findTestObject('Object Repository/Verify_FileUpload/lbl_UploadedFileName'), 'map.png')
-
 WebUI.closeBrowser()
