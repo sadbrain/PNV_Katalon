@@ -28,6 +28,8 @@ WebUI.waitForPageLoad(10)
 WebUI.verifyElementText(findTestObject('Object Repository/Login_Page/h6_PageTitle') , 'Dashboard', FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementPresent(findTestObject('Object Repository/Login_Page/ddl_UserControl'), 0)
 
+WebUI.waitForPageLoad(10)
+
 // Step 2 : Click to the toggle menu button to collapse the menu
 WebUI.click(findTestObject('Object Repository/Dashboard_Page/btn_Toggle'))
 WebUI.verifyElementPresent(findTestObject('Object Repository/Dashboard_Page/btn_ToggleRight'), 2)
@@ -51,6 +53,12 @@ WebUI.setText(findTestObject('Object Repository/Dashboard_Page/txt_Search'), "My
 TestObject testObj = findTestObject('Object Repository/Dashboard_Page/span_MenuItem')
 List <WebElement> elementsMyInfo = WebUI.findWebElements(testObj, 20)
 
+for(item in elementsMyInfo ) {
+	if(item.getText().contains('My Info')) {
+		WebUI.verifyEqual(item.getText() , 'My Info')
+		break
+	}
+}
 // Clear text
 WebUI.click(findTestObject('Object Repository/Dashboard_Page/txt_Search'))
 WebUI.sendKeys(findTestObject('Object Repository/Dashboard_Page/txt_Search'), Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE))
@@ -58,6 +66,7 @@ WebUI.sendKeys(findTestObject('Object Repository/Dashboard_Page/txt_Search'), Ke
 WebUI.setText(findTestObject('Object Repository/Dashboard_Page/txt_Search'), "D")
 List <WebElement> elementContainD = WebUI.findWebElements(testObj, 20)
 boolean containsD = false
+
 for (item in elementContainD) {
 	if(item.getText().toLowerCase().contains("d")) {
 		containsD = true;
@@ -66,5 +75,6 @@ for (item in elementContainD) {
 WebUI.verifyEqual(containsD, true)
 // Step 6 : Click to "Dashboard" menu
 WebUI.click(findTestObject('Object Repository/Dashboard_Page/mnu_MenuDefaultItem'))
-WebUI.verifyEqual( WebUI.getText(findTestObject('Object Repository/Login_Page/lbl_Dashboard')), 'Dashboard')
+WebUI.verifyEqual( WebUI.getText(findTestObject('Object Repository/Login_Page/h6_PageTitle')), 'Dashboard')
+
 WebUI.closeBrowser()
