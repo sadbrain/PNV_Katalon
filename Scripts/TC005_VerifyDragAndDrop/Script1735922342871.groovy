@@ -37,8 +37,8 @@ WebUI.dragAndDropToObject(boxA, boxB)
 String boxATextAfter = WebUI.getText(boxA)
 String boxBTextAfter = WebUI.getText(boxB)
 
-WebUI.verifyEqual(boxATextAfter, "B", FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyEqual(boxBTextAfter, "A",  FailureHandling.STOP_ON_FAILURE) 
+WebUI.verifyEqual(boxATextAfter, "B", FailureHandling.CONTINUE_ON_FAILURE)
+WebUI.verifyEqual(boxBTextAfter, "A",  FailureHandling.CONTINUE_ON_FAILURE) 
 
 WebUI.delay(2)
 
