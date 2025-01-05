@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC013_VerifyMenu</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5197a3e5-a436-4bbe-8e8f-17d30589b111</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>253cd0ad-a9fb-47f6-833e-1c10b6d45ffd</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'C:\\\\Users\\\\eunwo\\\\Downloads\\\\menu.csv'</defaultValue>
+      <description></description>
+      <id>253cd0ad-a9fb-47f6-833e-1c10b6d45ffd</id>
+      <masked>false</masked>
+      <name>file</name>
+   </variable>
+</TestCaseEntity>

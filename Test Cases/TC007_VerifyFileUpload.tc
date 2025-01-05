@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC007_VerifyFileUpload</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b709ab35-18c5-4d67-bf97-d097ec740279</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>51a81f4a-3c66-4659-95d4-0cd51617937c</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>123dcaee-92c4-4ca6-964a-d64b176f8773</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'C:\\\\Users\\\\eunwo\\\\OneDrive\\\\Pictures\\\\Meme\\\\0d0ebedbc32e7fb8a32c22de71888e61.gif'</defaultValue>
+      <description></description>
+      <id>51a81f4a-3c66-4659-95d4-0cd51617937c</id>
+      <masked>false</masked>
+      <name>file</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>123dcaee-92c4-4ca6-964a-d64b176f8773</id>
+      <masked>false</masked>
+      <name>outputFile</name>
+   </variable>
+</TestCaseEntity>
