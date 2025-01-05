@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC014 - Verify Login Function</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>3331fbed-30fa-4bc3-b1fb-3e537e87161e</testCaseGuid>
+</TestCaseEntity>

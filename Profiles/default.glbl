@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://webdriveruniversity.com/Contact-Us/contactus.html'</initValue>
+      <name>URL_CONTACT</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://webdriveruniversity.com/Accordion/index.html\r\n'</initValue>
+      <name>URL_ACCORDION</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://the-internet.herokuapp.com/'</initValue>
+      <name>URL_HERROKUAPP</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\\r\\n'</initValue>
+      <name>URL_ORANGE</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
